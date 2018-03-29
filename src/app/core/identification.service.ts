@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
-import {User} from '../../pages/identification/user';
+import {User} from '../../pages/new-identification/user';
 import {UserConnexion} from '../../pages/identification/userConnexion';
 import {RequestOptions,Headers} from '@angular/http';
 

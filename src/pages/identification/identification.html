@@ -18,36 +18,33 @@
 	
 		<h2>Connexion</h2>
 	<br>
-				<form class="example-form" (ngSubmit)="onSubmit2(loginForm2.value)" #loginForm2="ngForm">
+				<form  (ngSubmit)="onSubmit2(loginForm2.value)" #loginForm2="ngForm">
 					<ion-list>
 						<ion-item>
 						<ion-label floating>Email</ion-label>
 						<ion-input type="email"  id="email2" name="email2" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="userConnexion.email" #email2="ngModel"></ion-input>
-							<!--<p *ngIf="email2.hasError('email') && !emailFormControl.hasError('required')">
-							Veuillez renseigner une adresse valide.
-						</p>
-						<p *ngIf="email2.hasError('required')">
-							L'email doit être renseigné.
-						</p>-->
+							
 						</ion-item>
+						<ion-item no-border no-lines no-margin *ngIf="email2.hasError('pattern') && !email2.hasError('required')" >
+    					<small color="red">Veuillez renseigner une adresse valide.</small>
+    					
+  						</ion-item>
 						
 				
                         <ion-item>
 						<ion-label floating>Mot de passe</ion-label>
 						<ion-input type="password" id="password2" name="password2" required [(ngModel)]="userConnexion.password" #password2="ngModel" ></ion-input>
-						<!--<p *ngIf="password2.hasError('required')">
-							Le mot de passe doit être renseigné.
-						</p>-->
+						
 						</ion-item>
 						<ion-item>
 						</ion-item>
 					    
 					</ion-list>
 
-					<button  ion-button type="submit" class="btn btn-success">Connexion</button>
+					<button  ion-button type="submit" class="btn btn-success" [disabled]="!loginForm2.form.valid">Connexion</button>
 					<p> {{connexion}}</p>
 				</form>
-				<p class="underline"> Créer un compte </p>
+				<p class="underline" (click)="goToOtherPage()"> Créer un compte </p>
 		
 			
 </ion-content>

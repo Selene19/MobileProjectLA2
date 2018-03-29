@@ -1,0 +1,130 @@
+<!--
+  Generated template for the NewIdentificationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>PCHealthcare</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg-style">
+	
+	
+	<form *ngIf="showForm" class="example-form" (ngSubmit)="onSubmit(loginForm.value)" #loginForm="ngForm">
+		<h2>Créer un compte</h2>
+				<ion-list>
+						<ion-item>
+							<ion-label >Civilité </ion-label>	
+							<ion-select required id="civilite" name="civilite" [(ngModel)]="user.civilite" #civilite="ngModel">
+								
+								<ion-option *ngFor="let civilite of civilites" [value]="civilite">
+										{{civilite}}
+								</ion-option>
+							</ion-select>
+							
+
+					</ion-item>
+					<ion-item no-border no-lines no-margin *ngIf="civilite.hasError('required')" >
+    					<small>Veuillez choisir une civilité.</small>
+    					
+  						</ion-item>
+				   <ion-item>
+		<ion-label >Nom</ion-label>				
+		<ion-input  required id="nom" name="nom" [(ngModel)]="user.nom" #nom="ngModel"></ion-input>
+							
+						
+		</ion-item>
+					<ion-item no-border no-lines no-margin  *ngIf="nom.hasError('required')" >
+    					<small>Veuillez entrer votre nom.</small>
+    					
+  						</ion-item>
+		<ion-item>
+		<ion-label  >Prénom</ion-label>				
+		<ion-input required id="prenom" name="prenom"[(ngModel)]="user.prenom" #prenom="ngModel" ></ion-input>
+							
+						
+		</ion-item>
+					
+					<ion-item no-border no-lines no-margin  *ngIf="prenom.hasError('required')" >
+    					<small>Veuillez entrer votre prénom.</small>
+    					
+  						</ion-item>
+		<ion-item>
+		<ion-label >Email</ion-label>				
+		<ion-input  type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="user.email" #email="ngModel" ></ion-input>
+			
+			
+
+							
+
+			</ion-item>			
+					<ion-item no-border no-lines no-margin *ngIf="email.hasError('pattern') && !email.hasError('required')">
+ 
+    					<small>Veuillez renseigner une adresse valide.</small>
+    					
+  						</ion-item>
+					<ion-item no-border no-lines no-margin *ngIf="email.hasError('required')">
+ 
+    					<small>L'email doit être renseigné.</small>
+    					
+  						</ion-item>
+						
+					<ion-item>
+						<ion-label >Mot de passe</ion-label>
+							<ion-input  type="password" id="password"  required
+								   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password" [(ngModel)]="user.password"
+									   #password="ngModel"> </ion-input>
+							<!--<mat-error *ngIf="password.hasError('pattern')">Le mot de passe doit contenir au moins 8 caractéres comprenant au moins une lettre majuscule , une
+							  lettre minuscule et un chiffre.
+							</mat-error>
+							<mat-error *ngIf="password.hasError('required')">Veuillez entrer un mot de passe.</mat-error>-->
+
+					 </ion-item>
+					
+					<ion-item no-border no-lines no-margin *ngIf="password.hasError('pattern')">
+ 
+    					<small>Le mot de passe doit contenir au moins 8 caractéres comprenant au moins une lettre majuscule , une
+							  lettre minuscule et un chiffre.</small>
+    					
+  						</ion-item>
+					<ion-item no-border no-lines no-margin *ngIf="password.hasError('required')">
+ 
+    					<small>Veuillez entrer un mot de passe.</small>
+    					
+  						</ion-item>
+
+					<ion-item>
+						<ion-label >Confirmation de votre mot de passe</ion-label>
+						<ion-input  type="password" id="confirmPassword" 
+							   required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" [appEqualTo]="password"
+								   name="confirmPassword" [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel"> </ion-input>
+
+						
+						</ion-item>
+					<ion-item no-border no-lines no-margin *ngIf="confirmPassword.hasError('required')">
+ 
+    					<small>Veuillez confirmer votre mot de passe.</small>
+    					
+  						</ion-item>
+					<ion-item no-border no-lines no-margin *ngIf="confirmPassword.hasError('equalTo')">
+ 
+    					<small>Les mots de passe ne correspondent pas.</small>
+    					
+  						</ion-item>
+					
+					<ion-item>
+					</ion-item>
+		</ion-list>
+					  
+					  <button ion-button  type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid" >Créer un compte</button>
+					</form>
+					<h2> {{validation}}</h2>
+		<button *ngIf="!showForm" class="button" ion-button block large round (click)="goToOtherPage()"> Se connecter</button>
+
+</ion-content>

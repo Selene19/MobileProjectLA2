@@ -9,9 +9,13 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { IdentificationPage } from '../pages/identification/identification';
 import { ComptePage } from '../pages/compte/compte';
+import { NewIdentificationPage } from '../pages/new-identification/new-identification';
 import { CoreModule } from './core/core.module';
+//import { SharedModule } from './shared/shared.module';
 import {IdentificationPageModule} from '../pages/identification/identification.module';
 import {ComptePageModule} from '../pages/compte/compte.module';
+import {NewIdentificationPageModule} from '../pages/new-identification/new-identification.module';
+
 
 @NgModule({
   declarations: [
@@ -23,8 +27,10 @@ import {ComptePageModule} from '../pages/compte/compte.module';
     IonicModule.forRoot(MyApp),
 	  HttpClientModule,
 	  CoreModule,
+	  //SharedModule,
 	  	IdentificationPageModule,
-	  ComptePageModule
+	  ComptePageModule,
+	  NewIdentificationPageModule
 	  
 
   ],
@@ -33,7 +39,8 @@ import {ComptePageModule} from '../pages/compte/compte.module';
     MyApp,
     HomePage,
 	IdentificationPage,
-	  ComptePage
+	ComptePage,
+	NewIdentificationPage
 	  
   ],
   providers: [

@@ -6,6 +6,7 @@ import {map,mergeMap} from "rxjs/operators";
 import { Observable } from 'rxjs/Observable';
 import { IdentificationService } from '../../app/core/identification.service';
 import {ComptePage} from '../compte/compte';
+import {NewIdentificationPage} from '../new-identification/new-identification';
 
 
 /**
@@ -78,6 +79,12 @@ redirectToCompte(userConnexion:any){
 ionViewDidLoad() {
     console.log('ionViewDidLoad IdentificationPage');
   }
+
+goToOtherPage() {
+    //push another page onto the history stack
+    //causing the nav controller to animate the new page in
+    this.navCtrl.push(NewIdentificationPage);
   
 
+}
 }
