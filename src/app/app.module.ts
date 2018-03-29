@@ -3,9 +3,15 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { IdentificationPage } from '../pages/identification/identification';
+import { ComptePage } from '../pages/compte/compte';
+import { CoreModule } from './core/core.module';
+import {IdentificationPageModule} from '../pages/identification/identification.module';
+import {ComptePageModule} from '../pages/compte/compte.module';
 
 @NgModule({
   declarations: [
@@ -14,12 +20,21 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+	  HttpClientModule,
+	  CoreModule,
+	  	IdentificationPageModule,
+	  ComptePageModule
+	  
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+	IdentificationPage,
+	  ComptePage
+	  
   ],
   providers: [
     StatusBar,
