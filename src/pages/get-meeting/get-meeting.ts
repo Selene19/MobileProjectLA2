@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {GetMeetingPage} from '../get-meeting/get-meeting';
 
 /**
- * Generated class for the ComptePage page.
+ * Generated class for the GetMeetingPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +10,18 @@ import {GetMeetingPage} from '../get-meeting/get-meeting';
 
 @IonicPage()
 @Component({
-  selector: 'page-compte',
-  templateUrl: 'compte.html',
+  selector: 'page-get-meeting',
+  templateUrl: 'get-meeting.html',
 })
-export class ComptePage {
+export class GetMeetingPage {
 	id:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-	   this.id = navParams.get('id');
+	  this.id = navParams.get('id');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ComptePage');
+    console.log('ionViewDidLoad GetMeetingPage');
   }
 
 }

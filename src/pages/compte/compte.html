@@ -9,10 +9,43 @@
   <ion-navbar>
     <ion-title>compte</ion-title>
   </ion-navbar>
-
+<img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="bg-style no-scroll">
 {{id}}
+	
+	<ion-grid>
+  
+	<ion-row>
+    <ion-col>
+		<button class="button" ion-button block large round navPush="GetMeetingPage" [navParams]="{id:id}"> Prendre un rendez-vous</button>
+	</ion-col>
+  </ion-row>
+		
+		<ion-row>
+    <ion-col>
+		<button class="button" ion-button block large round> Voir vos rendez-vous</button>
+	</ion-col>
+  </ion-row>
+		<ion-row>
+    <ion-col>
+		<button class="button" ion-button block large round> Voir vos commandes</button>
+	</ion-col>
+  </ion-row>
+		<ion-row>
+    <ion-col>
+		<button class="button" ion-button block large round> Voir vos devis</button>
+	</ion-col>
+  </ion-row>
+		<br>
+	<ion-row>
+    <ion-col>
+		<button class="button last" ion-button block round> Déconnexion</button>
+	</ion-col>
+  </ion-row>	
+	
+		
+	</ion-grid>
 </ion-content>

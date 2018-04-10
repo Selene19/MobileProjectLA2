@@ -10,12 +10,13 @@ import { HomePage } from '../pages/home/home';
 import { IdentificationPage } from '../pages/identification/identification';
 import { ComptePage } from '../pages/compte/compte';
 import { NewIdentificationPage } from '../pages/new-identification/new-identification';
+import {GetMeetingPage} from '../pages/get-meeting/get-meeting';
 import { CoreModule } from './core/core.module';
 //import { SharedModule } from './shared/shared.module';
 import {IdentificationPageModule} from '../pages/identification/identification.module';
 import {ComptePageModule} from '../pages/compte/compte.module';
 import {NewIdentificationPageModule} from '../pages/new-identification/new-identification.module';
-
+import {GetMeetingPageModule} from '../pages/get-meeting/get-meeting.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {NewIdentificationPageModule} from '../pages/new-identification/new-ident
 	  //SharedModule,
 	  	IdentificationPageModule,
 	  ComptePageModule,
-	  NewIdentificationPageModule
+	  NewIdentificationPageModule,
+	  GetMeetingPageModule
 	  
 
   ],
@@ -40,7 +42,8 @@ import {NewIdentificationPageModule} from '../pages/new-identification/new-ident
     HomePage,
 	IdentificationPage,
 	ComptePage,
-	NewIdentificationPage
+	NewIdentificationPage,
+	GetMeetingPage
 	  
   ],
   providers: [

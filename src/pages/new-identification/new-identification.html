@@ -78,7 +78,7 @@
 					<ion-item>
 						<ion-label >Mot de passe</ion-label>
 							<ion-input  type="password" id="password"  required
-								   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password" [(ngModel)]="user.password"
+								    name="password" [(ngModel)]="user.password"
 									   #password="ngModel"> </ion-input>
 							<!--<mat-error *ngIf="password.hasError('pattern')">Le mot de passe doit contenir au moins 8 caractéres comprenant au moins une lettre majuscule , une
 							  lettre minuscule et un chiffre.
@@ -87,12 +87,13 @@
 
 					 </ion-item>
 					
-					<ion-item no-border no-lines no-margin *ngIf="password.hasError('pattern')">
+					<!--<ion-item no-border no-lines no-margin *ngIf="password.hasError('pattern')">
+pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
  
     					<small>Le mot de passe doit contenir au moins 8 caractéres comprenant au moins une lettre majuscule , une
 							  lettre minuscule et un chiffre.</small>
     					
-  						</ion-item>
+  						</ion-item>-->
 					<ion-item no-border no-lines no-margin *ngIf="password.hasError('required')">
  
     					<small>Veuillez entrer un mot de passe.</small>
@@ -102,7 +103,7 @@
 					<ion-item>
 						<ion-label >Confirmation de votre mot de passe</ion-label>
 						<ion-input  type="password" id="confirmPassword" 
-							   required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" [appEqualTo]="password"
+							   required [appEqualTo]="password"
 								   name="confirmPassword" [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel"> </ion-input>
 
 						
