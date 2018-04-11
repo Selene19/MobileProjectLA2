@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {GetMeetingPage} from '../get-meeting/get-meeting';
 
+
 /**
  * Generated class for the ComptePage page.
  *

@@ -7,12 +7,37 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>get-meeting</ion-title>
+    <ion-title>Prendre un rendez-vous</ion-title>
+	  
+        
   </ion-navbar>
-
+	
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="bg-style">
+	
+	
 {{id}}
+		<h2>{{month}}</h2>
+	<ion-buttons>
+            <button ion-button [disabled]="isToday" (click)="today()">Aujourd'hui</button>
+            <button ion-button (click)="loadEvents()">Actualiser</button>
+	
+        </ion-buttons>
+	
+	
+	<div class="bg-calendar">
+	<calendar [eventSource]="eventSource"
+        [calendarMode]="calendar.mode"
+        [currentDate]="calendar.currentDate"
+        (onCurrentDateChanged)="onCurrentDateChanged($event)"
+        (onRangeChanged)="reloadSource(startTime, endTime)"
+        (onEventSelected)="onEventSelected($event)"
+        (onTimeSelected)="onTimeSelected($event)"
+        step="30">
+      </calendar>
+	
+	</div>
+	
 </ion-content>

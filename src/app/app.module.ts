@@ -18,6 +18,10 @@ import {ComptePageModule} from '../pages/compte/compte.module';
 import {NewIdentificationPageModule} from '../pages/new-identification/new-identification.module';
 import {GetMeetingPageModule} from '../pages/get-meeting/get-meeting.module';
 
+
+
+
+
 @NgModule({
   declarations: [
     MyApp,
