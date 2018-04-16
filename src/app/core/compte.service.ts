@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
-/*import {User} from '../website/identification/user';
-import {RendezVousPost} from '../website/get-metting/rdPost';
-import {Operation} from '../website/get-metting/operation';*/
+/*import {User} from '../website/identification/user';*/
+import {RendezVousPost} from '../../pages/get-meeting/rdPost';
+import {Operation} from '../../pages/get-meeting/operation';
 
 import {RequestOptions,Headers} from '@angular/http';
 
@@ -35,20 +35,25 @@ export class CompteService {
 		return this.http.get('https://projectla2.ovh/API/calendarEvents');
 	}
 	
-	/*postMetting(rdPost:RendezVousPost):Observable<any>{
+	postMetting(rdPost:RendezVousPost):Observable<any>{
 		return this.http.post('https://projectla2.ovh/API/event',rdPost);
 		
-	}*/
+	}
 	
 	getMeetingId(id:any):Observable<any>{
 		return this.http.get('https://projectla2.ovh/API/events/byUserId?id='+id);
 	}
 	
-	/*postReparation(operation:Operation){
+	postReparation(operation:Operation){
 		return this.http.post('https://projectla2.ovh/API/reparation',operation);
 	}
 
 	postMontage(operation:Operation){
 		return this.http.post('https://projectla2.ovh/API/montage',operation)
-	}*/
+	}
+	
+	postNettoyage(operation:Operation){
+		return this.http.post('https://projectla2.ovh/API/nettoyage',operation);
+	}
+
 }

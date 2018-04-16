@@ -2,6 +2,9 @@ import { Component ,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CompteService } from '../../app/core/compte.service';
 import {map,mergeMap} from "rxjs/operators";
+import {RendezVous} from './rd';
+import {RendezVousPost} from './rdPost';
+import {Operation} from './operation';
 
 import { Observable } from "rxjs/Observable";
 
@@ -19,10 +22,28 @@ import { Observable } from "rxjs/Observable";
   templateUrl: 'get-meeting.html',
 })
 export class GetMeetingPage {
+	minDate:any
 	id:any;
 	eventSource;
 	events;
 	month:any;
+	
+	
+	
+	
+
+	services = [
+    'Montage',
+    'Réparation',
+    'Nettoyage',
+  ];
+	nettoyages=[
+		'Forfait nettoyage',
+		'Forfait logiciel',
+		'Forfait logiciel et nettoyage',
+	];
+
+	validation:String="";
 
 
     isToday:boolean;
@@ -55,14 +76,38 @@ export class GetMeetingPage {
                 return 'testDT';
             }
         }
+		
+		
+		
 	}
+
+	rd=new RendezVous();
+    rdPost=new RendezVousPost();
+operation=new Operation();
 	
 	
   constructor(public navCtrl: NavController, public navParams: NavParams,public compteService:CompteService) {
 	  
 	  this.id = navParams.get('id');
 	  this.getEvents().subscribe(events=>this.getEventsForCalendar(this.events));
-	  //this.month=new Date().getMonth();
+	  this.minDate= new Date().toISOString();
+	 //2018-04-16T07:46:22.434Z
+	  let cut=this.minDate.split(":");
+	  let cut2=cut[0].split("T");
+	  let hours=parseInt(cut2[1]);
+	  hours=hours+3;
+	  let hourss=hours.toString();
+	  if(hourss.length==2){
+		  this.minDate=cut2[0]+"T"+hours+":"+cut[1]+":"+cut[2];
+	  }
+	  else{
+		  this.minDate=cut2[0]+"T"+"0"+hours+":"+cut[1]+":"+cut[2];
+	  }
+    console.log(this.minDate);
+	  
+	 
+	  
+	  
 	  
   }
 
@@ -83,6 +128,7 @@ export class GetMeetingPage {
 		var events=[];
 		var startTime;
 		var endTime;
+		console.log()
 		
 		console.log(this.events);
 		this.events.forEach(event => {
@@ -92,13 +138,17 @@ export class GetMeetingPage {
 			let cut2=date.split("-");
 			let year=cut2[0];
 			let month=cut2[1];
+			console.log(month);
+			
 			let day=cut2[2];
+			console.log(day);
 			let cut3=time.split(":");
 			let hour=cut3[0];
 			let minute=cut3[1];
 			let second=cut3[2];
 			
-			startTime=new Date(year,month,day,hour,minute,second);
+			startTime=new Date(year,month-1,day,hour,minute,second);
+			console.log(startTime);
 			
 			 cut = event.end.split("T");
 			 date=cut[0];
@@ -112,7 +162,7 @@ export class GetMeetingPage {
 			 minute=cut3[1];
 			 second=cut3[2];
 			
-			endTime=new Date(year,month,day,hour,minute,second);
+			endTime=new Date(year,month-1,day,hour,minute,second);
 			
 			events.push({
                     title: event.title,
@@ -247,6 +297,123 @@ export class GetMeetingPage {
         current.setHours(0, 0, 0);
         return date < current;
     };
+
+
+
+	onSubmit(value):void {
+	
+	  
+	   
+	   
+	   this.rd.idUser=this.id;
+	   this.rd.service=value.service;
+	   this.rd.nettoyage=value.nettoyage;
+	   this.rd.date=value.date
+	   this.rd.time=value.time;
+	   this.rd.domicile=value.domicile;
+	   this.rd.adresse=value.adresse;
+	   this.rd.ville=value.ville;
+	   this.rd.codePostal=value.codePostal;
+		this.rd.description=value.description;
+		
+		
+		
+		//2018-04-16T09:00:00
+		
+		let dateStart=this.rd.time.toString().split("Z");
+		
+		
+		
+		
+	
+	    
+	 
+	 		
+	
+		let dateEndd=dateStart[0];
+		let dateEnd=dateEndd.toString().split(":");
+		let formatDateEnd="";
+		
+		
+		if(dateEnd[1].toString()=="00"){
+			
+			 formatDateEnd=dateEnd[0]+":30:00";
+		}
+		else {
+			
+			 let hours=dateEnd[0].split("T");
+			 let hoursEndd=hours[1];
+			let hoursEnd=parseInt(hoursEndd);
+			hoursEnd=hoursEnd+1;
+			
+			 formatDateEnd=hours[0]+"T"+hoursEnd+":00:00";
+		}
+	
+	
+		
+		
+	
+	    this.rdPost.start=dateStart[0];
+		
+		this.rdPost.end=formatDateEnd;
+		
+		
+		this.rdPost.typeEvent=this.rd.service
+		if(this.rd.nettoyage!=null){
+			this.rdPost.typeEvent+= " " +this.rd.nettoyage;
+		}
+		if(this.rd.domicile!=false){
+			this.rdPost.aDomicile=this.rd.domicile;
+			this.rdPost.adresse=this.rd.adresse+" " + this.rd.codePostal+ " " + this.rd.ville;
+		}
+		else {
+			this.rdPost.aDomicile=this.rd.domicile;
+			this.rdPost.adresse=null;
+		}
+		
+		this.rdPost.idUser=this.rd.idUser;
+	    
+	
+		console.log(this.rdPost);
+		
+	   this.operation.description=this.rd.description;
+		
+	
+	    
+	   
+	  this.compteService.postMetting(this.rdPost).subscribe(
+        res => {
+          this.validation="Votre rendez-vous est pris en compte.";
+			this.operation.idEvent=res.id;
+			this.postOperation(this.operation);
+			
+			
+        },
+        err => {
+          this.validation="Une erreur est survenu ou vous essayez de prendre une plage indisponible.";			
+        })
+	    
+
+	
+	   
+   }
+
+	postOperation(operation:Operation){
+		
+		if(this.rdPost.typeEvent=="Montage"){
+			this.compteService.postMontage(operation).subscribe();
+		}
+		
+		else {
+			if( this.rdPost.typeEvent=="Réparation"){
+				this.compteService.postReparation(operation).subscribe();
+				
+			}
+			else {
+				this.compteService.postNettoyage(operation).subscribe();
+			}
+		}
+	}
 	
 
 }

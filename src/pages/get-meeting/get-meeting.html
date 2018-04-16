@@ -17,8 +17,8 @@
 
 <ion-content padding class="bg-style">
 	
-	
-{{id}}
+	<!-- probleme avec les has error , restriction sur site web heure courante +1  -->
+
 		<h2>{{month}}</h2>
 	<ion-buttons>
             <button ion-button [disabled]="isToday" (click)="today()">Aujourd'hui</button>
@@ -39,5 +39,98 @@
       </calendar>
 	
 	</div>
+	
+	<h2>Ajouter un rendez-vous</h2>
+	<br>
+				<form  (ngSubmit)="onSubmit(loginForm.value)" #loginForm="ngForm">
+					<ion-list>
+						<ion-item>
+						<ion-label>Type de prestation</ion-label>
+							<ion-select required id="service" name="service" [(ngModel)]="rd.service" #service="ngModel">
+    							<ion-option *ngFor="let service of services" [value]="service">
+									{{service}}
+								</ion-option>
+    							
+  							</ion-select>
+							
+						</ion-item>
+						
+						<ion-item no-border no-lines no-margin *ngIf="service.hasError('required')" >
+    					<small style="color:red;">Le type de service doit être renseigné.</small>
+    					
+  						</ion-item>
+						
+						<ion-item *ngIf="rd.service=='Nettoyage'" >
+							<ion-label>Type de nettoyage</ion-label>
+						<ion-select required id="nettoyage" name="nettoyage" [(ngModel)]="rd.nettoyage" #nettoyage="ngModel">
+    						<ion-option *ngFor="let nettoyage of nettoyages" [value]="nettoyage">
+								{{nettoyage}}
+    						</ion-option>
+  							</ion-select>
+					
+						</ion-item>
+						
+						<!--<ion-item *ngIf="rd.service=='Nettoyage' && nettoyage.hasError('required') ">
+							<small style="color:red;">Le forfait doit être renseigné.</small>
+						</ion-item>-->
+						
+						<ion-item>
+  							<ion-label>Date et heure</ion-label>
+  								<ion-datetime id="time" #time="ngModel" required name="time" [(ngModel)]="rd.time"  minuteValues="0,30" displayFormat="DD MMM YYYY-HH:mm" pickerFormat="DD MMM YYYY HH mm" hourValues="9,10,11,12,13,14,15,16,17,18" [min]="minDate"></ion-datetime>
+						</ion-item>
+						<ion-item no-border no-lines no-margin *ngIf="time.hasError('required')" >
+    					<small style="color:red;">La date et l'heure doivent être renseigné.</small>
+    					
+  						</ion-item>
+						<ion-item>
+    						<ion-label>A domicile</ion-label>
+    							<ion-checkbox id="domicile" class="example-margin" name="domicile" [(ngModel)]="rd.domicile" #domicile="ngModel"></ion-checkbox>
+  						</ion-item>
+						<ion-item *ngIf="rd.domicile">
+							<ion-label floating>Entrer votre adresse</ion-label>
+
+    					<ion-textarea id="adresse" required name="adresse" [(ngModel)]="rd.adresse" #adresse="ngModel"></ion-textarea>
+  						</ion-item>
+						<!--<ion-item no-border no-lines no-margin *ngIf="adresse.hasError('required') && rd.domicile" >
+    					<small style="color:red;">>L'adresse du domicile doit être renseigné.</small>
+    					
+  						</ion-item>-->
+						
+						<ion-item *ngIf="rd.domicile">
+						<ion-label>Ville</ion-label>
+						<ion-input id="ville"required name="ville" [(ngModel)]="rd.ville" #ville="ngModel"></ion-input>
+							
+						</ion-item>
+						<!--<ion-item no-border no-lines no-margin *ngIf="ville.hasError('required') && rd.domicile" >
+    					<small style="color:red;">La ville du domicile doit être renseigné.</small>
+    					
+  						</ion-item>-->
+						
+						<ion-item *ngIf="rd.domicile">
+						<ion-label>Code postal</ion-label>
+						<ion-input  id="codePostal" required name="codePostal" [(ngModel)]="rd.codePostal" #codePostal="ngModel" maxlength="5" minlength="5"></ion-input>
+							
+						</ion-item>
+						<!--<ion-item no-border no-lines no-margin *ngIf="codePostal.hasError('required') && rd.domicile" >
+    					<small style="color:red;">Le code postal du domicile doit être renseigné.</small>
+    					
+  						</ion-item>-->
+						<ion-item *ngIf="rd.service!='Nettoyage'">
+							<ion-label>Description </ion-label>
+    					<ion-textarea id="description"  name="description" [(ngModel)]="rd.description" #description="ngModel" ></ion-textarea>
+  						</ion-item>
+
+						
+						
+						
+				
+                        
+						
+					    
+					</ion-list>
+
+					<button  ion-button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Valider</button>
+					<h2> {{validation}}</h2>
+				</form>
 	
 </ion-content>
