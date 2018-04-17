@@ -17,7 +17,7 @@
 
 <ion-content padding class="bg-style">
 	
-	<!-- probleme avec les has error , restriction sur site web heure courante +1  -->
+	<!-- probleme avec les has error  -->
 
 		<h2>{{month}}</h2>
 	<ion-buttons>
@@ -67,12 +67,15 @@
 								{{nettoyage}}
     						</ion-option>
   							</ion-select>
+						
+							
+						
 					
 						</ion-item>
-						
-						<!--<ion-item *ngIf="rd.service=='Nettoyage' && nettoyage.hasError('required') ">
-							<small style="color:red;">Le forfait doit être renseigné.</small>
+						<!--<ion-item *ngIf="rd.service=='Nettoyage'">
+						<small *ngIf="nettoyage.hasError('required')" style="color:red;" >Le forfait doit être renseigné.</small>
 						</ion-item>-->
+						
 						
 						<ion-item>
   							<ion-label>Date et heure</ion-label>

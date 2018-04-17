@@ -5,6 +5,7 @@ import {map,mergeMap} from "rxjs/operators";
 
 import { Observable } from 'rxjs/Observable';
 import { IdentificationService } from '../../app/core/identification.service';
+import { LoginService } from '../../app/core/login.service';
 import {ComptePage} from '../compte/compte';
 import {NewIdentificationPage} from '../new-identification/new-identification';
 
@@ -27,7 +28,7 @@ export class IdentificationPage {
 accesCompte:any;
 connexion:String="";
 
-  constructor(public navCtrl: NavController,public navParams: NavParams,public identificationService:IdentificationService) {
+  constructor(public navCtrl: NavController,public navParams: NavParams,public identificationService:IdentificationService,public loginService:LoginService) {
   }
 
 
@@ -67,8 +68,9 @@ redirectToCompte(userConnexion:any){
 	this.userConnexion.id=userConnexion.id;
 	
 	this.userConnexion.role=userConnexion.role;
-	this.navCtrl.push(ComptePage,{
-      id: this.userConnexion.id});
+	
+	this.loginService.postUser(this.userConnexion.id,this.userConnexion.role);
+	this.navCtrl.push(ComptePage);
 	//this.loginService.postUser(this.userConnexion);
 	
 	
@@ -83,6 +85,7 @@ ionViewDidLoad() {
 goToOtherPage() {
     //push another page onto the history stack
     //causing the nav controller to animate the new page in
+	
     this.navCtrl.push(NewIdentificationPage);
   
 

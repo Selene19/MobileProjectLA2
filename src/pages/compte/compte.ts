@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {GetMeetingPage} from '../get-meeting/get-meeting';
+import {HomePage} from '../home/home';
+import { LoginService } from '../../app/core/login.service';
 
 
 /**
@@ -18,12 +20,22 @@ import {GetMeetingPage} from '../get-meeting/get-meeting';
 export class ComptePage {
 	id:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-	   this.id = navParams.get('id');
+  constructor(public navCtrl: NavController, public navParams: NavParams,public loginService:LoginService) {
+	  
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ComptePage');
   }
+	
+	goToHome(){
+		this.navCtrl.push(HomePage);
+	}
+	
+	deconnexion(){
+		
+		this.loginService.changeAuthentification();
+		this.navCtrl.push(HomePage);
+	}
 
 }

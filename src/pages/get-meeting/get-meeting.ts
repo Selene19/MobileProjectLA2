@@ -87,8 +87,10 @@ operation=new Operation();
 	
 	
   constructor(public navCtrl: NavController, public navParams: NavParams,public compteService:CompteService) {
+	  let key2='id';
 	  
-	  this.id = navParams.get('id');
+	  this.id = sessionStorage.getItem(key2);
+	  
 	  this.getEvents().subscribe(events=>this.getEventsForCalendar(this.events));
 	  this.minDate= new Date().toISOString();
 	 //2018-04-16T07:46:22.434Z

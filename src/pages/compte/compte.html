@@ -7,6 +7,7 @@
 <ion-header>
 
   <ion-navbar>
+	  
     <ion-title>Compte</ion-title>
   </ion-navbar>
 <img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>
@@ -20,7 +21,7 @@
   
 	<ion-row>
     <ion-col>
-		<button class="button" ion-button block large round navPush="GetMeetingPage" [navParams]="{id:id}"> Prendre un rendez-vous</button>
+		<button class="button" ion-button block large round navPush="GetMeetingPage"> Prendre un rendez-vous</button>
 	</ion-col>
   </ion-row>
 		
@@ -42,7 +43,7 @@
 		<br>
 	<ion-row>
     <ion-col>
-		<button class="button last" ion-button block round> Déconnexion</button>
+		<button class="button last" (click)="deconnexion()" ion-button block round> Déconnexion</button>
 	</ion-col>
   </ion-row>	
 	
