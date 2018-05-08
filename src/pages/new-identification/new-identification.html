@@ -86,7 +86,10 @@
 							<mat-error *ngIf="password.hasError('required')">Veuillez entrer un mot de passe.</mat-error>-->
 
 					 </ion-item>
-					
+					<ion-item no-border no-lines no-margin *ngIf="password.hasError('required')">
+ 
+    					<small>Veuillez rentrer votre mot de passe.</small>
+					</ion-item>
 					<!--<ion-item no-border no-lines no-margin *ngIf="password.hasError('pattern')">
 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
  

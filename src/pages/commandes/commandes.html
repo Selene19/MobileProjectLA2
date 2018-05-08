@@ -1,0 +1,35 @@
+<!--
+  Generated template for the CommandesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Vos Commandes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding bg-style>
+	<ion-list inset>
+		
+		<ng-container *ngFor="let commande of commmandes">
+    		
+  			<ion-item>
+				<h3 style="display: inline">No. :</h3> <p style="display: inline">{{ commmande.id}}</p>
+				<br>
+    			<h3 style="display: inline">Statut :</h3> <p style="display: inline">{{ commande.status}}</p>
+				<br>
+				<h3 style="display: inline">Quantité : </h3> <p style="display: inline">{{ commmande.quantite}}</p>
+				<br>
+				<h3 style="display: inline">Date : </h3> <p style="display: inline">{{ commande.date}}</p>
+				
+   
+  			</ion-item>
+			<br>
+		</ng-container>
+	</ion-list>
+</ion-content>

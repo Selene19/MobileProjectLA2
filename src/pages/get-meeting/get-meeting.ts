@@ -105,7 +105,7 @@ operation=new Operation();
 	  else{
 		  this.minDate=cut2[0]+"T"+"0"+hours+":"+cut[1]+":"+cut[2];
 	  }
-    console.log(this.minDate);
+   
 	  
 	 
 	  
@@ -130,7 +130,7 @@ operation=new Operation();
 		var events=[];
 		var startTime;
 		var endTime;
-		console.log()
+		
 		
 		console.log(this.events);
 		this.events.forEach(event => {
@@ -179,7 +179,7 @@ operation=new Operation();
 		//new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate() + startDay));
 		
 		this.eventSource=events;
-		console.log(this.eventSource);
+		
 	}
 
     
@@ -376,7 +376,7 @@ operation=new Operation();
 		this.rdPost.idUser=this.rd.idUser;
 	    
 	
-		console.log(this.rdPost);
+		
 		
 	   this.operation.description=this.rd.description;
 		

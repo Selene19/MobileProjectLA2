@@ -25678,6 +25678,27 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-commandes .bg-style {
+  background: #9CECFB;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left bottom, left top, from(#0052D4), color-stop(#65C7F7), to(#9CECFB));
+  background: linear-gradient(0deg, #0052D4, #65C7F7, #9CECFB);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+page-commandes .no-scroll .scroll-content {
+  overflow: hidden;
+}
+
+page-commandes h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+page-commandes .last {
+  background-color: slategrey;
+}
+
 page-compte .bg-style {
   background: #9CECFB;
   /* fallback for old browsers */
@@ -26852,6 +26873,81 @@ page-identification small {
   color: red;
 }
 
+page-meeting .bg-style {
+  background: #9CECFB;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left bottom, left top, from(#0052D4), color-stop(#65C7F7), to(#9CECFB));
+  background: linear-gradient(0deg, #0052D4, #65C7F7, #9CECFB);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+page-meeting .bg-style .bg-calendar {
+  background-color: white;
+}
+
+page-meeting .no-scroll .scroll-content {
+  overflow: hidden;
+}
+
+page-meeting h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+ion-app.ios [padding] .scroll-content {
+  padding: 0px;
+}
+
+page-montages .bg-style {
+  background: #9CECFB;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left bottom, left top, from(#0052D4), color-stop(#65C7F7), to(#9CECFB));
+  background: linear-gradient(0deg, #0052D4, #65C7F7, #9CECFB);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+page-montages .button {
+  background-color: #efe6e59c;
+}
+
+page-montages .no-scroll .scroll-content {
+  overflow: hidden;
+}
+
+page-montages h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+page-montages p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+page-nettoyages .bg-style {
+  background: #9CECFB;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left bottom, left top, from(#0052D4), color-stop(#65C7F7), to(#9CECFB));
+  background: linear-gradient(0deg, #0052D4, #65C7F7, #9CECFB);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+page-nettoyages .button {
+  background-color: #efe6e59c;
+}
+
+page-nettoyages .no-scroll .scroll-content {
+  overflow: hidden;
+}
+
+page-nettoyages h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+page-nettoyages p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 page-new-identification .bg-style {
   background: #9CECFB;
   /* fallback for old browsers */
@@ -26871,4 +26967,58 @@ page-new-identification h2 {
 
 page-new-identification small {
   color: red;
+}
+
+page-operations .bg-style {
+  background: #9CECFB;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left bottom, left top, from(#0052D4), color-stop(#65C7F7), to(#9CECFB));
+  background: linear-gradient(0deg, #0052D4, #65C7F7, #9CECFB);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+page-operations .button {
+  background-color: #efe6e59c;
+}
+
+page-operations .no-scroll .scroll-content {
+  overflow: hidden;
+}
+
+page-operations h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+page-operations p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+page-operations ion-grid {
+  margin-top: 60px;
+}
+
+page-reparations .bg-style {
+  background: #9CECFB;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left bottom, left top, from(#0052D4), color-stop(#65C7F7), to(#9CECFB));
+  background: linear-gradient(0deg, #0052D4, #65C7F7, #9CECFB);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+page-reparations .button {
+  background-color: #efe6e59c;
+}
+
+page-reparations .no-scroll .scroll-content {
+  overflow: hidden;
+}
+
+page-reparations h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+page-reparations p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

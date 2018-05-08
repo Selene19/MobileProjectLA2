@@ -1,0 +1,40 @@
+<!--
+  Generated template for the ReparationsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Réparations</ion-title>
+  </ion-navbar>
+<img src="../../assets/imgs/reparation.jpg" width="100%" height="auto"/>
+</ion-header>
+
+
+<ion-content padding class="bg-style no-scroll">
+	<ion-grid>
+  
+	<ion-row>
+    <ion-col>
+		<h3 text-center> DÉPASSÉ ? PAS FORCÉMENT </h3>
+	<p> Un ordinateur est rarement « dépassé » de manière définitive, il suffit parfois de quelques petits « upgrades » (améliorations) pour le remettre sur les rails. </p>
+		<p>Si votre ordinateur après plusieurs années de bons et loyaux services montre des signes de faiblesse, il n’est pas pour autant bon pour la poubelle.</p>
+		<p> Nous pouvons vous proposer différent types de solution pour la réparation de votre ordinateur. Vous pouvez prendre rendez-vous avec un technicien pour évaluer les problémes ou effectué un devis si vous le souhaitez.</p>
+	</ion-col>
+  </ion-row>
+	
+		
+		<ion-row>
+    <ion-col>
+		
+		<button class="button" ion-button block large round (click)="goToOtherPage()" [hidden]="this.hiddenConnexion()"> Se connecter</button>
+		<button class="button" ion-button block large round (click)="goToOtherPageRD()" [hidden]="this.hiddenRD()"> Prendre rendez-vous </button>
+	</ion-col>
+  </ion-row>
+		
+	</ion-grid>
+	
+
+</ion-content>

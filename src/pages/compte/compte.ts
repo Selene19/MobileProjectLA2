@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {GetMeetingPage} from '../get-meeting/get-meeting';
 import {HomePage} from '../home/home';
+import {MeetingPage} from '../meeting/meeting';
+import {CommandesPage} from '../commandes/commandes'
 import { LoginService } from '../../app/core/login.service';
 
 
@@ -28,11 +30,11 @@ export class ComptePage {
     console.log('ionViewDidLoad ComptePage');
   }
 	
-	goToHome(){
+	goToHome(){ 
 		this.navCtrl.push(HomePage);
 	}
 	
-	deconnexion(){
+	deconnexion(){ 
 		
 		this.loginService.changeAuthentification();
 		this.navCtrl.push(HomePage);

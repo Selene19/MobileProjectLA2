@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import {IdentificationPage} from '../identification/identification';
 import {ComptePage} from '../compte/compte';
+import {OperationsPage} from '../operations/operations';
 import { LoginService } from '../../app/core/login.service';
 
 @Component({

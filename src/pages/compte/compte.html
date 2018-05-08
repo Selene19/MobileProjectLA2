@@ -6,8 +6,12 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-	  
+  <ion-navbar hideBackButton="true">
+	  <ion-buttons left>
+            <button  (click)="goToHome()" ion-button icon-only >
+               <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
     <ion-title>Compte</ion-title>
   </ion-navbar>
 <img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>
@@ -27,12 +31,12 @@
 		
 		<ion-row>
     <ion-col>
-		<button class="button" ion-button block large round> Voir vos rendez-vous</button>
+		<button class="button" ion-button block large round navPush="MeetingPage"> Voir vos rendez-vous</button>
 	</ion-col>
   </ion-row>
 		<ion-row>
     <ion-col>
-		<button class="button" ion-button block large round> Voir vos commandes</button>
+		<button class="button" ion-button block large round navPush="CommandesPage"> Voir vos commandes</button>
 	</ion-col>
   </ion-row>
 		<ion-row>

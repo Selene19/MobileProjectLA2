@@ -11,14 +11,24 @@ import { IdentificationPage } from '../pages/identification/identification';
 import { ComptePage } from '../pages/compte/compte';
 import { NewIdentificationPage } from '../pages/new-identification/new-identification';
 import {GetMeetingPage} from '../pages/get-meeting/get-meeting';
+import {MeetingPage} from '../pages/meeting/meeting';
+import {CommandesPage} from '../pages/commandes/commandes';
+import  {OperationsPage} from '../pages/operations/operations'
+import {MontagesPage} from '../pages/montages/montages';
+import {ReparationsPage} from '../pages/reparations/reparations';
+import {NettoyagesPage} from '../pages/nettoyages/nettoyages';
 import { CoreModule } from './core/core.module';
 //import { SharedModule } from './shared/shared.module';
 import {IdentificationPageModule} from '../pages/identification/identification.module';
 import {ComptePageModule} from '../pages/compte/compte.module';
 import {NewIdentificationPageModule} from '../pages/new-identification/new-identification.module';
 import {GetMeetingPageModule} from '../pages/get-meeting/get-meeting.module';
-
-
+import {MeetingPageModule} from '../pages/meeting/meeting.module';
+import {CommandesPageModule} from '../pages/commandes/commandes.module';
+import {OperationsPageModule} from '../pages/operations/operations.module';
+import {MontagesPageModule} from '../pages/montages/montages.module';
+import {ReparationsPageModule} from '../pages/reparations/reparations.module';
+import {NettoyagesPageModule} from '../pages/nettoyages/nettoyages.module';
 
 
 
@@ -36,7 +46,13 @@ import {GetMeetingPageModule} from '../pages/get-meeting/get-meeting.module';
 	  	IdentificationPageModule,
 	  ComptePageModule,
 	  NewIdentificationPageModule,
-	  GetMeetingPageModule
+	  GetMeetingPageModule,
+	  MeetingPageModule,
+	  CommandesPageModule,
+	  OperationsPageModule,
+	  MontagesPageModule,
+	  ReparationsPageModule,
+	  NettoyagesPageModule
 	  
 
   ],
@@ -47,7 +63,13 @@ import {GetMeetingPageModule} from '../pages/get-meeting/get-meeting.module';
 	IdentificationPage,
 	ComptePage,
 	NewIdentificationPage,
-	GetMeetingPage
+	GetMeetingPage,
+	MeetingPage,
+	CommandesPage,
+	 OperationsPage,
+	  MontagesPage,
+	  ReparationsPage,
+	  NettoyagesPage
 	  
   ],
   providers: [

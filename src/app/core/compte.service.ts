@@ -55,5 +55,30 @@ export class CompteService {
 	postNettoyage(operation:Operation){
 		return this.http.post('https://projectla2.ovh/API/nettoyage',operation);
 	}
+	
+	getMettingTab(id:any):Observable<any>{
+		return this.http.get('https://projectla2.ovh/API/tabEvents/'+id);
+	}
+	getEvent(id:any):Observable<any>{
+		return this.http.get('https://projectla2.ovh/API/event/'+id);
+	}
+	
+	deleteEvent(idEvent:any):Observable<any>{
+		return this.http.delete('https://projectla2.ovh/API/event/byId?id='+idEvent);
+		
+	}
+	
+	deleteOperationMontage(idOperation:any):Observable<any>{
+		return this.http.delete('https://projectla2.ovh/API/montage/byId?id='+idOperation);
+	}
+	
+	deleteOperationNettoyage(idOperation:any):Observable<any>{
+		return this.http.delete('https://projectla2.ovh/API/nettoyage/byId?id='+idOperation);
+		
+	}
+	
+	deleteOperationReparation(idOperation:any):Observable<any>{
+		return this.http.delete('https://projectla2.ovh/API/reparation/byId?id='+idOperation);
+	}
 
 }
