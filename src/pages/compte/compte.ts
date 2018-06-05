@@ -14,28 +14,30 @@ import { LoginService } from '../../app/core/login.service';
  * Ionic pages and navigation.
  */
 
+/* Permet la connexion et la deconnexion du compte */
+
 @IonicPage()
 @Component({
-  selector: 'page-compte',
-  templateUrl: 'compte.html',
+	selector: 'page-compte',
+	templateUrl: 'compte.html',
 })
 export class ComptePage {
 	id:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public loginService:LoginService) {
-	  
-  }
+	constructor(public navCtrl: NavController, public navParams: NavParams,public loginService:LoginService) {
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ComptePage');
-  }
-	
+	}
+
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad ComptePage');
+	}
+
 	goToHome(){ 
 		this.navCtrl.push(HomePage);
 	}
-	
+
 	deconnexion(){ 
-		
+
 		this.loginService.changeAuthentification();
 		this.navCtrl.push(HomePage);
 	}

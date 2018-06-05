@@ -45,8 +45,10 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton="true">\n\n    <ion-title>\n\n      PCHealthcare\n\n    </ion-title>\n\n  </ion-navbar>\n\n	<img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>\n\n</ion-header>\n\n\n\n<ion-content padding class="bg-style no-scroll">\n\n	\n\n	\n\n	<ion-grid>\n\n  \n\n	<ion-row>\n\n    <ion-col>\n\n		<h3 text-center> Bienvenue sur PCHealthcare</h3>\n\n	<p text-center> Découvrez toute nos prestations et prenez un rendez-vous en vous connectant.</p>\n\n	</ion-col>\n\n  </ion-row>\n\n	<ion-row>\n\n   <br>\n\n   <br>\n\n  </ion-row>\n\n		\n\n		<button class="button"ion-button block large round navPush="OperationsPage">Découvrir nos services</button>\n\n		<ion-row>\n\n    <ion-col>\n\n		\n\n		<button class="button" ion-button block large round (click)="goToOtherPage()" [hidden]="this.hiddenConnexion()"> Se connecter</button>\n\n		<button class="button" ion-button block large round (click)="goToOtherPageCompte()" [hidden]="this.hiddenCompte()"> Voir mon compte </button>\n\n	</ion-col>\n\n  </ion-row>\n\n		\n\n	</ion-grid>\n\n	\n\n  \n\n</ion-content>\n\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\home\home.html"*/
-        }),
+            selector: 'page-home',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\home\home.html"*/'<ion-header>\n\n	<ion-navbar hideBackButton="true">\n\n		<ion-title>\n\n			PCHealthcare\n\n		</ion-title>\n\n	</ion-navbar>\n\n	<img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>\n\n</ion-header>\n\n\n\n<ion-content padding class="bg-style no-scroll">\n\n\n\n\n\n	<ion-grid>\n\n\n\n		<ion-row>\n\n			<ion-col>\n\n				<h3 text-center> Bienvenue sur PCHealthcare</h3>\n\n				<p text-center> Découvrez toute nos prestations et prenez un rendez-vous en vous connectant.</p>\n\n			</ion-col>\n\n		</ion-row>\n\n		<ion-row>\n\n			<br>\n\n			<br>\n\n		</ion-row>\n\n\n\n		<button class="button"ion-button block large round navPush="OperationsPage">Découvrir nos services</button>\n\n		<ion-row>\n\n			<ion-col>\n\n\n\n				<button class="button" ion-button block large round (click)="goToOtherPage()" [hidden]="this.hiddenConnexion()"> Se connecter</button>\n\n				<button class="button" ion-button block large round (click)="goToOtherPageCompte()" [hidden]="this.hiddenCompte()"> Voir mon compte </button>\n\n			</ion-col>\n\n		</ion-row>\n\n\n\n	</ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\home\home.html"*/
+        })
+        /*Page d'accueil*/
+        ,
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__app_core_login_service__["a" /* LoginService */]])
     ], HomePage);
     return HomePage;
@@ -74,6 +76,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+/* Service permettant d'effectuer les requetes d'authentification */
 var IdentificationService = /** @class */ (function () {
     function IdentificationService(http) {
         this.http = http;
@@ -89,9 +92,10 @@ var IdentificationService = /** @class */ (function () {
     };
     IdentificationService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
     ], IdentificationService);
     return IdentificationService;
+    var _a;
 }());
 
 //# sourceMappingURL=identification.service.js.map
@@ -128,6 +132,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+/*Page de création d'un compte client */
 var NewIdentificationPage = /** @class */ (function () {
     function NewIdentificationPage(navCtrl, navParams, identificationService) {
         this.navCtrl = navCtrl;
@@ -168,7 +173,7 @@ var NewIdentificationPage = /** @class */ (function () {
     };
     NewIdentificationPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-new-identification',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\new-identification\new-identification.html"*/'<!--\n\n  Generated template for the NewIdentificationPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>PCHealthcare</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="bg-style">\n\n	\n\n	\n\n	<form *ngIf="showForm" class="example-form" (ngSubmit)="onSubmit(loginForm.value)" #loginForm="ngForm">\n\n		<h2>Créer un compte</h2>\n\n				<ion-list>\n\n						<ion-item>\n\n							<ion-label >Civilité </ion-label>	\n\n							<ion-select required id="civilite" name="civilite" [(ngModel)]="user.civilite" #civilite="ngModel">\n\n								\n\n								<ion-option *ngFor="let civilite of civilites" [value]="civilite">\n\n										{{civilite}}\n\n								</ion-option>\n\n							</ion-select>\n\n							\n\n\n\n					</ion-item>\n\n					<ion-item no-border no-lines no-margin *ngIf="civilite.hasError(\'required\')" >\n\n    					<small>Veuillez choisir une civilité.</small>\n\n    					\n\n  						</ion-item>\n\n				   <ion-item>\n\n		<ion-label >Nom</ion-label>				\n\n		<ion-input  required id="nom" name="nom" [(ngModel)]="user.nom" #nom="ngModel"></ion-input>\n\n							\n\n						\n\n		</ion-item>\n\n					<ion-item no-border no-lines no-margin  *ngIf="nom.hasError(\'required\')" >\n\n    					<small>Veuillez entrer votre nom.</small>\n\n    					\n\n  						</ion-item>\n\n		<ion-item>\n\n		<ion-label  >Prénom</ion-label>				\n\n		<ion-input required id="prenom" name="prenom"[(ngModel)]="user.prenom" #prenom="ngModel" ></ion-input>\n\n							\n\n						\n\n		</ion-item>\n\n					\n\n					<ion-item no-border no-lines no-margin  *ngIf="prenom.hasError(\'required\')" >\n\n    					<small>Veuillez entrer votre prénom.</small>\n\n    					\n\n  						</ion-item>\n\n		<ion-item>\n\n		<ion-label >Email</ion-label>				\n\n		<ion-input  type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="user.email" #email="ngModel" ></ion-input>\n\n			\n\n			\n\n\n\n							\n\n\n\n			</ion-item>			\n\n					<ion-item no-border no-lines no-margin *ngIf="email.hasError(\'pattern\') && !email.hasError(\'required\')">\n\n \n\n    					<small>Veuillez renseigner une adresse valide.</small>\n\n    					\n\n  						</ion-item>\n\n					<ion-item no-border no-lines no-margin *ngIf="email.hasError(\'required\')">\n\n \n\n    					<small>L\'email doit être renseigné.</small>\n\n    					\n\n  						</ion-item>\n\n						\n\n					<ion-item>\n\n						<ion-label >Mot de passe</ion-label>\n\n							<ion-input  type="password" id="password"  required\n\n								    name="password" [(ngModel)]="user.password"\n\n									   #password="ngModel"> </ion-input>\n\n							<!--<mat-error *ngIf="password.hasError(\'pattern\')">Le mot de passe doit contenir au moins 8 caractéres comprenant au moins une lettre majuscule , une\n\n							  lettre minuscule et un chiffre.\n\n							</mat-error>\n\n							<mat-error *ngIf="password.hasError(\'required\')">Veuillez entrer un mot de passe.</mat-error>-->\n\n\n\n					 </ion-item>\n\n					<ion-item no-border no-lines no-margin *ngIf="password.hasError(\'required\')">\n\n \n\n    					<small>Veuillez rentrer votre mot de passe.</small>\n\n					</ion-item>\n\n					<!--<ion-item no-border no-lines no-margin *ngIf="password.hasError(\'pattern\')">\n\npattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"\n\n \n\n    					<small>Le mot de passe doit contenir au moins 8 caractéres comprenant au moins une lettre majuscule , une\n\n							  lettre minuscule et un chiffre.</small>\n\n    					\n\n  						</ion-item>-->\n\n					<ion-item no-border no-lines no-margin *ngIf="password.hasError(\'required\')">\n\n \n\n    					<small>Veuillez entrer un mot de passe.</small>\n\n    					\n\n  						</ion-item>\n\n\n\n					<ion-item>\n\n						<ion-label >Confirmation de votre mot de passe</ion-label>\n\n						<ion-input  type="password" id="confirmPassword" \n\n							   required [appEqualTo]="password"\n\n								   name="confirmPassword" [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel"> </ion-input>\n\n\n\n						\n\n						</ion-item>\n\n					<ion-item no-border no-lines no-margin *ngIf="confirmPassword.hasError(\'required\')">\n\n \n\n    					<small>Veuillez confirmer votre mot de passe.</small>\n\n    					\n\n  						</ion-item>\n\n					<ion-item no-border no-lines no-margin *ngIf="confirmPassword.hasError(\'equalTo\')">\n\n \n\n    					<small>Les mots de passe ne correspondent pas.</small>\n\n    					\n\n  						</ion-item>\n\n					\n\n					<ion-item>\n\n					</ion-item>\n\n		</ion-list>\n\n					  \n\n					  <button ion-button  type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid" >Créer un compte</button>\n\n					</form>\n\n					<h2> {{validation}}</h2>\n\n		<button *ngIf="!showForm" class="button" ion-button block large round (click)="goToOtherPage()"> Se connecter</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\new-identification\new-identification.html"*/,
+            selector: 'page-new-identification',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\new-identification\new-identification.html"*/'<!--\n\nGenerated template for the NewIdentificationPage page.\n\n\n\nSee http://ionicframework.com/docs/components/#navigation for more info on\n\nIonic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n	<ion-navbar>\n\n		<ion-title>PCHealthcare</ion-title>\n\n	</ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="bg-style">\n\n\n\n\n\n	<form *ngIf="showForm" class="example-form" (ngSubmit)="onSubmit(loginForm.value)" #loginForm="ngForm">\n\n		<h2>Créer un compte</h2>\n\n		<ion-list>\n\n			<ion-item>\n\n				<ion-label >Civilité </ion-label>	\n\n				<ion-select required id="civilite" name="civilite" [(ngModel)]="user.civilite" #civilite="ngModel">\n\n\n\n					<ion-option *ngFor="let civilite of civilites" [value]="civilite">\n\n						{{civilite}}\n\n					</ion-option>\n\n				</ion-select>\n\n\n\n\n\n			</ion-item>\n\n			<ion-item no-border no-lines no-margin *ngIf="civilite.hasError(\'required\')" >\n\n				<small>Veuillez choisir une civilité.</small>\n\n\n\n			</ion-item>\n\n			<ion-item>\n\n				<ion-label >Nom</ion-label>				\n\n				<ion-input  required id="nom" name="nom" [(ngModel)]="user.nom" #nom="ngModel"></ion-input>\n\n\n\n\n\n			</ion-item>\n\n			<ion-item no-border no-lines no-margin  *ngIf="nom.hasError(\'required\')" >\n\n				<small>Veuillez entrer votre nom.</small>\n\n\n\n			</ion-item>\n\n			<ion-item>\n\n				<ion-label  >Prénom</ion-label>				\n\n				<ion-input required id="prenom" name="prenom"[(ngModel)]="user.prenom" #prenom="ngModel" ></ion-input>\n\n\n\n\n\n			</ion-item>\n\n\n\n			<ion-item no-border no-lines no-margin  *ngIf="prenom.hasError(\'required\')" >\n\n				<small>Veuillez entrer votre prénom.</small>\n\n\n\n			</ion-item>\n\n			<ion-item>\n\n				<ion-label >Email</ion-label>				\n\n				<ion-input  type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="user.email" #email="ngModel" ></ion-input>\n\n\n\n\n\n\n\n\n\n\n\n			</ion-item>			\n\n			<ion-item no-border no-lines no-margin *ngIf="email.hasError(\'pattern\') && !email.hasError(\'required\')">\n\n\n\n				<small>Veuillez renseigner une adresse valide.</small>\n\n\n\n			</ion-item>\n\n			<ion-item no-border no-lines no-margin *ngIf="email.hasError(\'required\')">\n\n\n\n				<small>L\'email doit être renseigné.</small>\n\n\n\n			</ion-item>\n\n\n\n			<ion-item>\n\n				<ion-label >Mot de passe</ion-label>\n\n				<ion-input  type="password" id="password"  required\n\n						   name="password" [(ngModel)]="user.password"\n\n						   #password="ngModel"> </ion-input>\n\n				<!--<mat-error *ngIf="password.hasError(\'pattern\')">Le mot de passe doit contenir au moins 8 caractéres comprenant au moins une lettre majuscule , une\n\nlettre minuscule et un chiffre.\n\n</mat-error>\n\n<mat-error *ngIf="password.hasError(\'required\')">Veuillez entrer un mot de passe.</mat-error>-->\n\n\n\n			</ion-item>\n\n			<ion-item no-border no-lines no-margin *ngIf="password.hasError(\'required\')">\n\n\n\n				<small>Veuillez rentrer votre mot de passe.</small>\n\n			</ion-item>\n\n			<!--<ion-item no-border no-lines no-margin *ngIf="password.hasError(\'pattern\')">\n\npattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"\n\n\n\n<small>Le mot de passe doit contenir au moins 8 caractéres comprenant au moins une lettre majuscule , une\n\nlettre minuscule et un chiffre.</small>\n\n\n\n</ion-item>-->\n\n			<ion-item no-border no-lines no-margin *ngIf="password.hasError(\'required\')">\n\n\n\n				<small>Veuillez entrer un mot de passe.</small>\n\n\n\n			</ion-item>\n\n\n\n			<ion-item>\n\n				<ion-label >Confirmation de votre mot de passe</ion-label>\n\n				<ion-input  type="password" id="confirmPassword" \n\n						   required [appEqualTo]="password"\n\n						   name="confirmPassword" [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel"> </ion-input>\n\n\n\n\n\n			</ion-item>\n\n			<ion-item no-border no-lines no-margin *ngIf="confirmPassword.hasError(\'required\')">\n\n\n\n				<small>Veuillez confirmer votre mot de passe.</small>\n\n\n\n			</ion-item>\n\n			<ion-item no-border no-lines no-margin *ngIf="confirmPassword.hasError(\'equalTo\')">\n\n\n\n				<small>Les mots de passe ne correspondent pas.</small>\n\n\n\n			</ion-item>\n\n\n\n			<ion-item>\n\n			</ion-item>\n\n		</ion-list>\n\n\n\n		<button ion-button  type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid" >Créer un compte</button>\n\n	</form>\n\n	<h2> {{validation}}</h2>\n\n	<button *ngIf="!showForm" class="button" ion-button block large round (click)="goToOtherPage()"> Se connecter</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\new-identification\new-identification.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__app_core_identification_service__["a" /* IdentificationService */]])
     ], NewIdentificationPage);
@@ -245,10 +250,10 @@ var map = {
 		191
 	],
 	"../pages/get-meeting/get-meeting.module": [
-		212
+		211
 	],
 	"../pages/identification/identification.module": [
-		211
+		212
 	],
 	"../pages/meeting/meeting.module": [
 		213
@@ -260,13 +265,13 @@ var map = {
 		217
 	],
 	"../pages/new-identification/new-identification.module": [
-		223
-	],
-	"../pages/operations/operations.module": [
 		219
 	],
+	"../pages/operations/operations.module": [
+		222
+	],
 	"../pages/reparations/reparations.module": [
-		221
+		220
 	]
 };
 function webpackAsyncContext(req) {
@@ -384,18 +389,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the CommandesPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+/* Permet d'afficher la liste des commandes et de les supprimer */
 var CommandesPage = /** @class */ (function () {
-    function CommandesPage(navCtrl, navParams, compteService) {
+    function CommandesPage(navCtrl, navParams, compteService, alertCtrl) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.compteService = compteService;
+        this.alertCtrl = alertCtrl;
         this.commandes = new Array();
         var key2 = 'id';
         var id = sessionStorage.getItem(key2);
@@ -412,13 +420,48 @@ var CommandesPage = /** @class */ (function () {
         ///console.log(commandes.id);
         this.commandes = commandes.reverse();
     };
+    CommandesPage.prototype.openDialog = function (id) {
+        var _this = this;
+        this.id = id;
+        var alert = this.alertCtrl.create({
+            title: 'Suppression',
+            message: 'Voulez-vous supprimer cette commande ?',
+            buttons: [
+                {
+                    text: 'Annuler',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Annuler');
+                    }
+                },
+                {
+                    text: 'Confirmer',
+                    handler: function () {
+                        console.log('Confirmer');
+                        _this.confirm();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    CommandesPage.prototype.confirm = function () {
+        this.compteService.deleteCommande(this.id.toString()).subscribe();
+    };
+    CommandesPage.prototype.loadEvents = function () {
+        var _this = this;
+        var key2 = 'id';
+        var id = sessionStorage.getItem(key2);
+        this.getCommandes(id).subscribe(function (commandes) { return _this.addData(_this.commandes); });
+    };
     CommandesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-commandes',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\commandes\commandes.html"*/'0<!--\n  Generated template for the CommandesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Vos Commandes</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding bg-style>\n	<ion-list inset>\n		\n		<ng-container *ngFor="let commande of commmandes">\n    		\n  			<ion-item>\n				<h3 style="display: inline">No. :</h3> <p style="display: inline">{{ commmande.id}}</p>\n				<br>\n    			<h3 style="display: inline">Statut :</h3> <p style="display: inline">{{ commande.status}}</p>\n				<br>\n				<h3 style="display: inline">Quantité : </h3> <p style="display: inline">{{ commmande.quantite}}</p>\n				<br>\n				<h3 style="display: inline">Date : </h3> <p style="display: inline">{{ commande.date}}</p>\n				\n   \n  			</ion-item>\n			<br>\n		</ng-container>\n	</ion-list>\n</ion-content>\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\commandes\commandes.html"*/,
+            selector: 'page-commandes',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\commandes\commandes.html"*/'0<!--\nGenerated template for the CommandesPage page.\n\nSee http://ionicframework.com/docs/components/#navigation for more info on\nIonic pages and navigation.\n-->\n<ion-header>\n\n	<ion-navbar>\n		<ion-title>Vos Commandes</ion-title>\n	</ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-style">\n	<ion-list inset>\n		<button ion-button (click)="loadEvents()">Actualiser</button>\n		<ng-container *ngFor="let commande of commandes">\n\n			<ion-item>\n				<i style="margin-left: 92%;" class="material-icons" (click)="openDialog(commande.id)">clear</i>\n				<h3 style="display: inline">No. :</h3> <p style="display: inline">{{ commande.id}}</p>\n				<br>\n				<h3 style="display: inline">Date :</h3> <p style="display: inline">{{ commande.date}}</p>\n				<br>\n				<h3 style="display: inline">Statut : </h3> <p style="display: inline">{{ commande.status}}</p>\n				<br>\n				<h3 style="display: inline">Prix Total : </h3> <p style="display: inline">{{commande.prixTotal}}</p>\n\n\n			</ion-item>\n			<br>\n		</ng-container>\n	</ion-list>\n</ion-content>\n\n\n\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\commandes\commandes.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__app_core_compte_service__["a" /* CompteService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__app_core_compte_service__["a" /* CompteService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__app_core_compte_service__["a" /* CompteService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
     ], CommandesPage);
     return CommandesPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=commandes.js.map
@@ -426,47 +469,6 @@ var CommandesPage = /** @class */ (function () {
 /***/ }),
 
 /***/ 211:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IdentificationPageModule", function() { return IdentificationPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__identification__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_core_core_module__ = __webpack_require__(114);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-var IdentificationPageModule = /** @class */ (function () {
-    function IdentificationPageModule() {
-    }
-    IdentificationPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__identification__["a" /* IdentificationPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__identification__["a" /* IdentificationPage */]),
-                __WEBPACK_IMPORTED_MODULE_3__app_core_core_module__["a" /* CoreModule */]
-            ],
-        })
-    ], IdentificationPageModule);
-    return IdentificationPageModule;
-}());
-
-//# sourceMappingURL=identification.module.js.map
-
-/***/ }),
-
-/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -504,6 +506,47 @@ var GetMeetingPageModule = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=get-meeting.module.js.map
+
+/***/ }),
+
+/***/ 212:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IdentificationPageModule", function() { return IdentificationPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__identification__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_core_core_module__ = __webpack_require__(114);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var IdentificationPageModule = /** @class */ (function () {
+    function IdentificationPageModule() {
+    }
+    IdentificationPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__identification__["a" /* IdentificationPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__identification__["a" /* IdentificationPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__app_core_core_module__["a" /* CoreModule */]
+            ],
+        })
+    ], IdentificationPageModule);
+    return IdentificationPageModule;
+}());
+
+//# sourceMappingURL=identification.module.js.map
 
 /***/ }),
 
@@ -575,6 +618,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+/*Permet l'affichage des rendez-vous d'un client */
 var MeetingPage = /** @class */ (function () {
     function MeetingPage(navCtrl, navParams, compteService, alertCtrl) {
         var _this = this;
@@ -662,7 +706,7 @@ var MeetingPage = /** @class */ (function () {
     };
     MeetingPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-meeting',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\meeting\meeting.html"*/'<!--\n  Generated template for the MeetingPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Vos rendez-vous </ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-style">\n	<button ion-button (click)="loadEvents()">Actualiser</button>\n	<ion-list inset>\n		\n		<ng-container *ngFor="let meeting of meetings">\n    		\n  			<ion-item>\n				<i style="margin-left: 92%;" class="material-icons" (click)="openDialog(meeting.idEvent,meeting.idOperation,meeting.typeEvent)">clear</i>\n				<br>\n				<h3 style="display: inline">Date et heure début :</h3> <p style="display: inline">{{ meeting.start}}</p>\n				<br>\n    			<h3 style="display: inline">Date et heure fin :</h3> <p style="display: inline">{{ meeting.end}}</p>\n				<br>\n				<h3 style="display: inline">Intitulé : </h3> <p style="display: inline">{{ meeting.typeEvent}}</p>\n				<br>\n				<h3 style="display: inline">Lieu : </h3> <i style="display: inline" *ngIf="meeting.aDomicile!=false" class="material-icons">home</i> <i style="display: inline" *ngIf="meeting.aDomicile!=true" class="material-icons">business</i>\n				<br>\n				<h3 style="display: inline">Description :</h3> <p style="display: inline">{{ meeting.description}}</p>\n				<br>\n				<h3 style="display: inline"> Statut :</h3> <p style="display: inline">{{ meeting.statut}}</p>\n   \n  			</ion-item>\n			<br>\n		</ng-container>\n	</ion-list>\n	\n\n\n</ion-content>\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\meeting\meeting.html"*/,
+            selector: 'page-meeting',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\meeting\meeting.html"*/'<!--\nGenerated template for the MeetingPage page.\n\nSee http://ionicframework.com/docs/components/#navigation for more info on\nIonic pages and navigation.\n-->\n<ion-header>\n\n	<ion-navbar>\n		<ion-title>Vos rendez-vous </ion-title>\n	</ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="bg-style">\n	<button ion-button (click)="loadEvents()">Actualiser</button>\n	<ion-list inset>\n\n		<ng-container *ngFor="let meeting of meetings">\n\n			<ion-item>\n				<i style="margin-left: 92%;" class="material-icons" (click)="openDialog(meeting.idEvent,meeting.idOperation,meeting.typeEvent)">clear</i>\n				<br>\n				<h3 style="display: inline">Date et heure début :</h3> <p style="display: inline">{{ meeting.start}}</p>\n				<br>\n				<h3 style="display: inline">Date et heure fin :</h3> <p style="display: inline">{{ meeting.end}}</p>\n				<br>\n				<h3 style="display: inline">Intitulé : </h3> <p style="display: inline">{{ meeting.typeEvent}}</p>\n				<br>\n				<h3 style="display: inline">Lieu : </h3> <i style="display: inline" *ngIf="meeting.aDomicile!=false" class="material-icons">home</i> <i style="display: inline" *ngIf="meeting.aDomicile!=true" class="material-icons">business</i>\n				<br>\n				<h3 style="display: inline">Description :</h3> <p style="display: inline">{{ meeting.description}}</p>\n				<br>\n				<h3 style="display: inline"> Statut :</h3> <p style="display: inline">{{ meeting.statut}}</p>\n\n			</ion-item>\n			<br>\n		</ng-container>\n	</ion-list>\n\n\n\n</ion-content>\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\meeting\meeting.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__app_core_compte_service__["a" /* CompteService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], MeetingPage);
@@ -741,6 +785,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+/*Page d'informations de montage */
 var MontagesPage = /** @class */ (function () {
     function MontagesPage(navCtrl, navParams, loginService) {
         this.navCtrl = navCtrl;
@@ -766,7 +811,7 @@ var MontagesPage = /** @class */ (function () {
     };
     MontagesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-montages',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\montages\montages.html"*/'<!--\n  Generated template for the MontagesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Montage</ion-title>\n	  \n  </ion-navbar>\n<img src="../../assets/imgs/montage.jpg" width="100%" height="auto"/>\n</ion-header>\n\n\n<ion-content padding class="bg-style no-scroll">\n	<ion-grid>\n  \n	<ion-row>\n    <ion-col>\n		\n		\n		<h3 text-center> Vous souhaitez monter un nouvel ordinateur ou faire évoluer celui que vous possédez ?  </h3> <br>\n	<p> Nous pouvons le monter pour vous ou vous conseiller de nouveaux composants et amélioration possible. </p>\n	</ion-col>\n  </ion-row>\n	\n		\n		<ion-row>\n    <ion-col>\n		\n		<button class="button" ion-button block large round (click)="goToOtherPage()" [hidden]="this.hiddenConnexion()"> Se connecter</button>\n		<button class="button" ion-button block large round (click)="goToOtherPageRD()" [hidden]="this.hiddenRD()"> Prendre rendez-vous </button>\n	</ion-col>\n  </ion-row>\n		\n	</ion-grid>\n</ion-content>\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\montages\montages.html"*/,
+            selector: 'page-montages',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\montages\montages.html"*/'<!--\nGenerated template for the MontagesPage page.\n\nSee http://ionicframework.com/docs/components/#navigation for more info on\nIonic pages and navigation.\n-->\n<ion-header>\n\n	<ion-navbar>\n		<ion-title>Montage</ion-title>\n\n	</ion-navbar>\n	<img src="../../assets/imgs/montage.jpg" width="100%" height="auto"/>\n</ion-header>\n\n\n<ion-content padding class="bg-style no-scroll">\n	<ion-grid>\n\n		<ion-row>\n			<ion-col>\n\n\n				<h3 text-center> Vous souhaitez monter un nouvel ordinateur ou faire évoluer celui que vous possédez ?  </h3> <br>\n				<p> Nous pouvons le monter pour vous ou vous conseiller de nouveaux composants et amélioration possible. </p>\n			</ion-col>\n		</ion-row>\n\n\n		<ion-row>\n			<ion-col>\n\n				<button class="button" ion-button block large round (click)="goToOtherPage()" [hidden]="this.hiddenConnexion()"> Se connecter</button>\n				<button class="button" ion-button block large round (click)="goToOtherPageRD()" [hidden]="this.hiddenRD()"> Prendre rendez-vous </button>\n			</ion-col>\n		</ion-row>\n\n	</ion-grid>\n</ion-content>\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\montages\montages.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__app_core_login_service__["a" /* LoginService */]])
     ], MontagesPage);
@@ -845,6 +890,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+/*Page d'informations service de nettoyage */
 var NettoyagesPage = /** @class */ (function () {
     function NettoyagesPage(navCtrl, navParams, loginService) {
         this.navCtrl = navCtrl;
@@ -870,7 +916,7 @@ var NettoyagesPage = /** @class */ (function () {
     };
     NettoyagesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-nettoyages',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\nettoyages\nettoyages.html"*/'<!--\n  Generated template for the NettoyagesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Nettoyage</ion-title>\n	  \n  </ion-navbar>\n	<img src="../../assets/imgs/clean.png" width="100%" height="auto"/>\n\n</ion-header>\n\n\n<ion-content padding class="bg-style no-scroll">\n	<ion-grid>\n  \n	<ion-row>\n    <ion-col>\n		<h3 text-center> NETTOYAGE EXTERIEUR ET INTERIEUR </h3>\n	\n		<p>La poussière est l’ennemi numéro 1 de votre ordinateur ! Dès qu’elle fait son apparition à l’intérieur du boitier, il faut s’en débarrasser au plus vite avant qu’elle ne détériore vos composants. </p>\n		\n		<p> Au gré des mises à jour et des installations de nouveaux logiciels, un ordinateur peut vite saturer à cause du manque d\'espace sur le disque dur ou de mémoire vive insuffisante. Au lieu de choisir l\'option coûteuse de changer de matériel, il peut être nécessaire d\'effectuer régulièrement un nettoyage complet de son ordinateur à la recherche des applications inutilisées voire indésirables.</p>\n		\n	</ion-col>\n  </ion-row>\n	\n		\n		<ion-row>\n    <ion-col>\n		\n		<button class="button" ion-button block large round (click)="goToOtherPage()" [hidden]="this.hiddenConnexion()"> Se connecter</button>\n		<button class="button" ion-button block large round (click)="goToOtherPageRD()" [hidden]="this.hiddenRD()"> Prendre rendez-vous </button>\n	</ion-col>\n  </ion-row>\n		\n	</ion-grid>\n</ion-content>\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\nettoyages\nettoyages.html"*/,
+            selector: 'page-nettoyages',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\nettoyages\nettoyages.html"*/'<!--\nGenerated template for the NettoyagesPage page.\n\nSee http://ionicframework.com/docs/components/#navigation for more info on\nIonic pages and navigation.\n-->\n<ion-header>\n\n	<ion-navbar>\n		<ion-title>Nettoyage</ion-title>\n\n	</ion-navbar>\n	<img src="../../assets/imgs/clean.png" width="100%" height="auto"/>\n\n</ion-header>\n\n\n<ion-content padding class="bg-style no-scroll">\n	<ion-grid>\n\n		<ion-row>\n			<ion-col>\n				<h3 text-center> NETTOYAGE EXTERIEUR ET INTERIEUR </h3>\n\n				<p>La poussière est l’ennemi numéro 1 de votre ordinateur ! Dès qu’elle fait son apparition à l’intérieur du boitier, il faut s’en débarrasser au plus vite avant qu’elle ne détériore vos composants. </p>\n\n				<p> Au gré des mises à jour et des installations de nouveaux logiciels, un ordinateur peut vite saturer à cause du manque d\'espace sur le disque dur ou de mémoire vive insuffisante. Au lieu de choisir l\'option coûteuse de changer de matériel, il peut être nécessaire d\'effectuer régulièrement un nettoyage complet de son ordinateur à la recherche des applications inutilisées voire indésirables.</p>\n\n			</ion-col>\n		</ion-row>\n\n\n		<ion-row>\n			<ion-col>\n\n				<button class="button" ion-button block large round (click)="goToOtherPage()" [hidden]="this.hiddenConnexion()"> Se connecter</button>\n				<button class="button" ion-button block large round (click)="goToOtherPageRD()" [hidden]="this.hiddenRD()"> Prendre rendez-vous </button>\n			</ion-col>\n		</ion-row>\n\n	</ion-grid>\n</ion-content>\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\nettoyages\nettoyages.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__app_core_login_service__["a" /* LoginService */]])
     ], NettoyagesPage);
@@ -882,193 +928,6 @@ var NettoyagesPage = /** @class */ (function () {
 /***/ }),
 
 /***/ 219:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OperationsPageModule", function() { return OperationsPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__operations__ = __webpack_require__(220);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var OperationsPageModule = /** @class */ (function () {
-    function OperationsPageModule() {
-    }
-    OperationsPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__operations__["a" /* OperationsPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__operations__["a" /* OperationsPage */]),
-            ],
-        })
-    ], OperationsPageModule);
-    return OperationsPageModule;
-}());
-
-//# sourceMappingURL=operations.module.js.map
-
-/***/ }),
-
-/***/ 220:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OperationsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the OperationsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var OperationsPage = /** @class */ (function () {
-    function OperationsPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    OperationsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad OperationsPage');
-    };
-    OperationsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-operations',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\operations\operations.html"*/'<!--\n  Generated template for the OperationsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Services</ion-title>\n  </ion-navbar>\n<img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>\n</ion-header>\n\n\n<ion-content padding class="bg-style no-scroll">\n	\n	<ion-grid>\n     <ion-row>\n		 <ion-col>\n			 <button class="button" navPush="MontagesPage" ion-button block large round>Montage</button>\n		 </ion-col>\n		</ion-row>\n		<ion-row>\n		 <ion-col>\n			 <button class="button" navPush="ReparationsPage" ion-button block large round>Réparation</button>\n		 </ion-col>\n		</ion-row>\n		<ion-row>\n		 <ion-col>\n			 <button class="button" navPush="NettoyagesPage" ion-button block large round>Nettoyage</button>\n		 </ion-col>\n		</ion-row>\n		\n		\n		\n    \n	</ion-grid>\n</ion-content>\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\operations\operations.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
-    ], OperationsPage);
-    return OperationsPage;
-}());
-
-//# sourceMappingURL=operations.js.map
-
-/***/ }),
-
-/***/ 221:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReparationsPageModule", function() { return ReparationsPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reparations__ = __webpack_require__(222);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var ReparationsPageModule = /** @class */ (function () {
-    function ReparationsPageModule() {
-    }
-    ReparationsPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__reparations__["a" /* ReparationsPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__reparations__["a" /* ReparationsPage */]),
-            ],
-        })
-    ], ReparationsPageModule);
-    return ReparationsPageModule;
-}());
-
-//# sourceMappingURL=reparations.module.js.map
-
-/***/ }),
-
-/***/ 222:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReparationsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__identification_identification__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_core_login_service__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__get_meeting_get_meeting__ = __webpack_require__(53);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the ReparationsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ReparationsPage = /** @class */ (function () {
-    function ReparationsPage(navCtrl, navParams, loginService) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.loginService = loginService;
-    }
-    ReparationsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ReparationsPage');
-    };
-    ReparationsPage.prototype.goToOtherPage = function () {
-        //push another page onto the history stack
-        //causing the nav controller to animate the new page in
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__identification_identification__["a" /* IdentificationPage */]);
-    };
-    ReparationsPage.prototype.goToOtherPageRD = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__get_meeting_get_meeting__["a" /* GetMeetingPage */]);
-    };
-    ReparationsPage.prototype.hiddenConnexion = function () {
-        return this.loginService.hiddenConnexion();
-    };
-    ReparationsPage.prototype.hiddenRD = function () {
-        return this.loginService.hiddenCompte();
-    };
-    ReparationsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-reparations',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\reparations\reparations.html"*/'<!--\n  Generated template for the ReparationsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Réparations</ion-title>\n  </ion-navbar>\n<img src="../../assets/imgs/reparation.jpg" width="100%" height="auto"/>\n</ion-header>\n\n\n<ion-content padding class="bg-style no-scroll">\n	<ion-grid>\n  \n	<ion-row>\n    <ion-col>\n		<h3 text-center> DÉPASSÉ ? PAS FORCÉMENT </h3>\n	<p> Un ordinateur est rarement « dépassé » de manière définitive, il suffit parfois de quelques petits « upgrades » (améliorations) pour le remettre sur les rails. </p>\n		<p>Si votre ordinateur après plusieurs années de bons et loyaux services montre des signes de faiblesse, il n’est pas pour autant bon pour la poubelle.</p>\n		<p> Nous pouvons vous proposer différent types de solution pour la réparation de votre ordinateur. Vous pouvez prendre rendez-vous avec un technicien pour évaluer les problémes ou effectué un devis si vous le souhaitez.</p>\n	</ion-col>\n  </ion-row>\n	\n		\n		<ion-row>\n    <ion-col>\n		\n		<button class="button" ion-button block large round (click)="goToOtherPage()" [hidden]="this.hiddenConnexion()"> Se connecter</button>\n		<button class="button" ion-button block large round (click)="goToOtherPageRD()" [hidden]="this.hiddenRD()"> Prendre rendez-vous </button>\n	</ion-col>\n  </ion-row>\n		\n	</ion-grid>\n	\n\n</ion-content>\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\reparations\reparations.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__app_core_login_service__["a" /* LoginService */]])
-    ], ReparationsPage);
-    return ReparationsPage;
-}());
-
-//# sourceMappingURL=reparations.js.map
-
-/***/ }),
-
-/***/ 223:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1110,6 +969,195 @@ var NewIdentificationPageModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 220:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReparationsPageModule", function() { return ReparationsPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reparations__ = __webpack_require__(221);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var ReparationsPageModule = /** @class */ (function () {
+    function ReparationsPageModule() {
+    }
+    ReparationsPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__reparations__["a" /* ReparationsPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__reparations__["a" /* ReparationsPage */]),
+            ],
+        })
+    ], ReparationsPageModule);
+    return ReparationsPageModule;
+}());
+
+//# sourceMappingURL=reparations.module.js.map
+
+/***/ }),
+
+/***/ 221:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReparationsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__identification_identification__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_core_login_service__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__get_meeting_get_meeting__ = __webpack_require__(53);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the ReparationsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+/*Page de présentations service réparation*/
+var ReparationsPage = /** @class */ (function () {
+    function ReparationsPage(navCtrl, navParams, loginService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loginService = loginService;
+    }
+    ReparationsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ReparationsPage');
+    };
+    ReparationsPage.prototype.goToOtherPage = function () {
+        //push another page onto the history stack
+        //causing the nav controller to animate the new page in
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__identification_identification__["a" /* IdentificationPage */]);
+    };
+    ReparationsPage.prototype.goToOtherPageRD = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__get_meeting_get_meeting__["a" /* GetMeetingPage */]);
+    };
+    ReparationsPage.prototype.hiddenConnexion = function () {
+        return this.loginService.hiddenConnexion();
+    };
+    ReparationsPage.prototype.hiddenRD = function () {
+        return this.loginService.hiddenCompte();
+    };
+    ReparationsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-reparations',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\reparations\reparations.html"*/'<!--\nGenerated template for the ReparationsPage page.\n\nSee http://ionicframework.com/docs/components/#navigation for more info on\nIonic pages and navigation.\n-->\n<ion-header>\n\n	<ion-navbar>\n		<ion-title>Réparations</ion-title>\n	</ion-navbar>\n	<img src="../../assets/imgs/reparation.jpg" width="100%" height="auto"/>\n</ion-header>\n\n\n<ion-content padding class="bg-style no-scroll">\n	<ion-grid>\n\n		<ion-row>\n			<ion-col>\n				<h3 text-center> DÉPASSÉ ? PAS FORCÉMENT </h3>\n				<p> Un ordinateur est rarement « dépassé » de manière définitive, il suffit parfois de quelques petits « upgrades » (améliorations) pour le remettre sur les rails. </p>\n				<p>Si votre ordinateur après plusieurs années de bons et loyaux services montre des signes de faiblesse, il n’est pas pour autant bon pour la poubelle.</p>\n				<p> Nous pouvons vous proposer différent types de solution pour la réparation de votre ordinateur. Vous pouvez prendre rendez-vous avec un technicien pour évaluer les problémes ou effectué un devis si vous le souhaitez.</p>\n			</ion-col>\n		</ion-row>\n\n\n		<ion-row>\n			<ion-col>\n\n				<button class="button" ion-button block large round (click)="goToOtherPage()" [hidden]="this.hiddenConnexion()"> Se connecter</button>\n				<button class="button" ion-button block large round (click)="goToOtherPageRD()" [hidden]="this.hiddenRD()"> Prendre rendez-vous </button>\n			</ion-col>\n		</ion-row>\n\n	</ion-grid>\n\n\n</ion-content>\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\reparations\reparations.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__app_core_login_service__["a" /* LoginService */]])
+    ], ReparationsPage);
+    return ReparationsPage;
+}());
+
+//# sourceMappingURL=reparations.js.map
+
+/***/ }),
+
+/***/ 222:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OperationsPageModule", function() { return OperationsPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__operations__ = __webpack_require__(223);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var OperationsPageModule = /** @class */ (function () {
+    function OperationsPageModule() {
+    }
+    OperationsPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__operations__["a" /* OperationsPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__operations__["a" /* OperationsPage */]),
+            ],
+        })
+    ], OperationsPageModule);
+    return OperationsPageModule;
+}());
+
+//# sourceMappingURL=operations.module.js.map
+
+/***/ }),
+
+/***/ 223:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OperationsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the OperationsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+/*Page de choix de service*/
+var OperationsPage = /** @class */ (function () {
+    function OperationsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    OperationsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad OperationsPage');
+    };
+    OperationsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-operations',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\operations\operations.html"*/'<!--\nGenerated template for the OperationsPage page.\n\nSee http://ionicframework.com/docs/components/#navigation for more info on\nIonic pages and navigation.\n-->\n<ion-header>\n\n	<ion-navbar>\n		<ion-title>Services</ion-title>\n	</ion-navbar>\n	<img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>\n</ion-header>\n\n\n<ion-content padding class="bg-style no-scroll">\n\n	<ion-grid>\n		<ion-row>\n			<ion-col>\n				<button class="button" navPush="MontagesPage" ion-button block large round>Montage</button>\n			</ion-col>\n		</ion-row>\n		<ion-row>\n			<ion-col>\n				<button class="button" navPush="ReparationsPage" ion-button block large round>Réparation</button>\n			</ion-col>\n		</ion-row>\n		<ion-row>\n			<ion-col>\n				<button class="button" navPush="NettoyagesPage" ion-button block large round>Nettoyage</button>\n			</ion-col>\n		</ion-row>\n\n\n\n\n	</ion-grid>\n</ion-content>\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\operations\operations.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], OperationsPage);
+    return OperationsPage;
+}());
+
+//# sourceMappingURL=operations.js.map
+
+/***/ }),
+
 /***/ 267:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1143,20 +1191,20 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_get_meeting_get_meeting__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_meeting_meeting__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_commandes_commandes__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_operations_operations__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_operations_operations__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_montages_montages__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_reparations_reparations__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_reparations_reparations__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_nettoyages_nettoyages__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__core_core_module__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_identification_identification_module__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_identification_identification_module__ = __webpack_require__(212);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_compte_compte_module__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_new_identification_new_identification_module__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_get_meeting_get_meeting_module__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_new_identification_new_identification_module__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_get_meeting_get_meeting_module__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_meeting_meeting_module__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_commandes_commandes_module__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_operations_operations_module__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_operations_operations_module__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_montages_montages_module__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_reparations_reparations_module__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_reparations_reparations_module__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_nettoyages_nettoyages_module__ = __webpack_require__(217);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1209,14 +1257,14 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/compte/compte.module#ComptePageModule', name: 'ComptePage', segment: 'compte', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/commandes/commandes.module#CommandesPageModule', name: 'CommandesPage', segment: 'commandes', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/identification/identification.module#IdentificationPageModule', name: 'IdentificationPage', segment: 'identification', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/get-meeting/get-meeting.module#GetMeetingPageModule', name: 'GetMeetingPage', segment: 'get-meeting', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/identification/identification.module#IdentificationPageModule', name: 'IdentificationPage', segment: 'identification', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/meeting/meeting.module#MeetingPageModule', name: 'MeetingPage', segment: 'meeting', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/montages/montages.module#MontagesPageModule', name: 'MontagesPage', segment: 'montages', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/nettoyages/nettoyages.module#NettoyagesPageModule', name: 'NettoyagesPage', segment: 'nettoyages', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/operations/operations.module#OperationsPageModule', name: 'OperationsPage', segment: 'operations', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/new-identification/new-identification.module#NewIdentificationPageModule', name: 'NewIdentificationPage', segment: 'new-identification', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/reparations/reparations.module#ReparationsPageModule', name: 'ReparationsPage', segment: 'reparations', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/new-identification/new-identification.module#NewIdentificationPageModule', name: 'NewIdentificationPage', segment: 'new-identification', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/operations/operations.module#OperationsPageModule', name: 'OperationsPage', segment: 'operations', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */],
@@ -1529,6 +1577,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+/*Page d'identification pour un utilisateur*/
 var IdentificationPage = /** @class */ (function () {
     function IdentificationPage(navCtrl, navParams, identificationService, loginService) {
         this.navCtrl = navCtrl;
@@ -1574,7 +1623,7 @@ var IdentificationPage = /** @class */ (function () {
     };
     IdentificationPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-identification',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\identification\identification.html"*/'<!--\n\n  Generated template for the IdentificationPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      PCHealthcare\n\n    </ion-title>\n\n  </ion-navbar>\n\n	<img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>\n\n</ion-header>\n\n\n\n<ion-content padding class="bg-style no-scroll">\n\n	\n\n	\n\n		<h2>Connexion</h2>\n\n	<br>\n\n				<form  (ngSubmit)="onSubmit2(loginForm2.value)" #loginForm2="ngForm">\n\n					<ion-list>\n\n						<ion-item>\n\n						<ion-label floating>Email</ion-label>\n\n						<ion-input type="email"  id="email2" name="email2" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="userConnexion.email" #email2="ngModel"></ion-input>\n\n							\n\n						</ion-item>\n\n						<ion-item no-border no-lines no-margin *ngIf="email2.hasError(\'pattern\') && !email2.hasError(\'required\')" >\n\n    					<small color="red">Veuillez renseigner une adresse valide.</small>\n\n    					\n\n  						</ion-item>\n\n						\n\n				\n\n                        <ion-item>\n\n						<ion-label floating>Mot de passe</ion-label>\n\n						<ion-input type="password" id="password2" name="password2" required [(ngModel)]="userConnexion.password" #password2="ngModel" ></ion-input>\n\n						\n\n						</ion-item>\n\n						<ion-item>\n\n						</ion-item>\n\n					    \n\n					</ion-list>\n\n\n\n					<button  ion-button type="submit" class="btn btn-success" [disabled]="!loginForm2.form.valid">Connexion</button>\n\n					<p> {{connexion}}</p>\n\n				</form>\n\n				<p class="underline" (click)="goToOtherPage()"> Créer un compte </p>\n\n		\n\n			\n\n</ion-content>\n\n<!--<ion-label color="primary" floating>Floating Label</ion-label>\n\n    <ion-input></ion-input-->\n\n\n\n\n\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\identification\identification.html"*/,
+            selector: 'page-identification',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\identification\identification.html"*/'<!--\n\nGenerated template for the IdentificationPage page.\n\n\n\nSee http://ionicframework.com/docs/components/#navigation for more info on\n\nIonic pages and navigation.\n\n-->\n\n<ion-header>\n\n	<ion-navbar>\n\n		<ion-title>\n\n			PCHealthcare\n\n		</ion-title>\n\n	</ion-navbar>\n\n	<img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>\n\n</ion-header>\n\n\n\n<ion-content padding class="bg-style no-scroll">\n\n\n\n\n\n	<h2>Connexion</h2>\n\n	<br>\n\n	<form  (ngSubmit)="onSubmit2(loginForm2.value)" #loginForm2="ngForm">\n\n		<ion-list>\n\n			<ion-item>\n\n				<ion-label floating>Email</ion-label>\n\n				<ion-input type="email"  id="email2" name="email2" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="userConnexion.email" #email2="ngModel"></ion-input>\n\n\n\n			</ion-item>\n\n			<ion-item no-border no-lines no-margin *ngIf="email2.hasError(\'pattern\') && !email2.hasError(\'required\')" >\n\n				<small color="red">Veuillez renseigner une adresse valide.</small>\n\n\n\n			</ion-item>\n\n\n\n\n\n			<ion-item>\n\n				<ion-label floating>Mot de passe</ion-label>\n\n				<ion-input type="password" id="password2" name="password2" required [(ngModel)]="userConnexion.password" #password2="ngModel" ></ion-input>\n\n\n\n			</ion-item>\n\n			<ion-item>\n\n			</ion-item>\n\n\n\n		</ion-list>\n\n\n\n		<button  ion-button type="submit" class="btn btn-success" [disabled]="!loginForm2.form.valid">Connexion</button>\n\n		<p> {{connexion}}</p>\n\n	</form>\n\n	<p class="underline" (click)="goToOtherPage()"> Créer un compte </p>\n\n\n\n\n\n</ion-content>\n\n<!--<ion-label color="primary" floating>Floating Label</ion-label>\n\n<ion-input></ion-input-->\n\n\n\n\n\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\identification\identification.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__app_core_identification_service__["a" /* IdentificationService */], __WEBPACK_IMPORTED_MODULE_5__app_core_login_service__["a" /* LoginService */]])
     ], IdentificationPage);
@@ -1767,6 +1816,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+/*Permet la prise de rendez-vous*/
 var GetMeetingPage = /** @class */ (function () {
     function GetMeetingPage(navCtrl, navParams, compteService) {
         var _this = this;
@@ -2059,7 +2109,7 @@ var GetMeetingPage = /** @class */ (function () {
     };
     GetMeetingPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-get-meeting',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\get-meeting\get-meeting.html"*/'<!--\n\n  Generated template for the GetMeetingPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Prendre un rendez-vous</ion-title>\n\n	  \n\n        \n\n  </ion-navbar>\n\n	\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="bg-style">\n\n	\n\n	<!-- probleme avec les has error  -->\n\n	\n\n		<h2>{{month}}</h2>\n\n	<ion-buttons>\n\n            <button ion-button [disabled]="isToday" (click)="today()">Aujourd\'hui</button>\n\n            <button ion-button (click)="loadEvents()">Actualiser</button>\n\n	\n\n        </ion-buttons>\n\n	\n\n	\n\n	<div class="bg-calendar">\n\n	<calendar [eventSource]="eventSource"\n\n        [calendarMode]="calendar.mode"\n\n        [currentDate]="calendar.currentDate"\n\n        (onCurrentDateChanged)="onCurrentDateChanged($event)"\n\n        (onRangeChanged)="reloadSource(startTime, endTime)"\n\n        (onEventSelected)="onEventSelected($event)"\n\n        (onTimeSelected)="onTimeSelected($event)"\n\n        step="30">\n\n      </calendar>\n\n	\n\n	</div>\n\n	\n\n	<h2>Ajouter un rendez-vous</h2>\n\n	<br>\n\n				<form  (ngSubmit)="onSubmit(loginForm.value)" #loginForm="ngForm">\n\n					<ion-list>\n\n						<ion-item>\n\n						<ion-label>Type de prestation</ion-label>\n\n							<ion-select required id="service" name="service" [(ngModel)]="rd.service" #service="ngModel">\n\n    							<ion-option *ngFor="let service of services" [value]="service">\n\n									{{service}}\n\n								</ion-option>\n\n    							\n\n  							</ion-select>\n\n							\n\n						</ion-item>\n\n						\n\n						<ion-item no-border no-lines no-margin *ngIf="service.hasError(\'required\')" >\n\n    					<small style="color:red;">Le type de service doit être renseigné.</small>\n\n    					\n\n  						</ion-item>\n\n						\n\n						<ion-item *ngIf="rd.service==\'Nettoyage\'" >\n\n							<ion-label>Type de nettoyage</ion-label>\n\n						<ion-select required id="nettoyage" name="nettoyage" [(ngModel)]="rd.nettoyage" #nettoyage="ngModel">\n\n    						<ion-option *ngFor="let nettoyage of nettoyages" [value]="nettoyage">\n\n								{{nettoyage}}\n\n    						</ion-option>\n\n  							</ion-select>\n\n						\n\n							\n\n						\n\n					\n\n						</ion-item>\n\n						<!--<ion-item *ngIf="rd.service==\'Nettoyage\'">\n\n						<small *ngIf="nettoyage.hasError(\'required\')" style="color:red;" >Le forfait doit être renseigné.</small>\n\n						</ion-item>-->\n\n						\n\n						\n\n						<ion-item>\n\n  							<ion-label>Date et heure</ion-label>\n\n  								<ion-datetime id="time" #time="ngModel" required name="time" [(ngModel)]="rd.time"  minuteValues="0,30" displayFormat="DD MMM YYYY-HH:mm" pickerFormat="DD MMM YYYY HH mm" hourValues="9,10,11,12,13,14,15,16,17,18" [min]="minDate"></ion-datetime>\n\n						</ion-item>\n\n						<ion-item no-border no-lines no-margin *ngIf="time.hasError(\'required\')" >\n\n    					<small style="color:red;">La date et l\'heure doivent être renseigné.</small>\n\n    					\n\n  						</ion-item>\n\n						<ion-item>\n\n    						<ion-label>A domicile</ion-label>\n\n    							<ion-checkbox id="domicile" class="example-margin" name="domicile" [(ngModel)]="rd.domicile" #domicile="ngModel"></ion-checkbox>\n\n  						</ion-item>\n\n						<ion-item *ngIf="rd.domicile">\n\n							<ion-label floating>Entrer votre adresse</ion-label>\n\n\n\n    					<ion-textarea id="adresse" required name="adresse" [(ngModel)]="rd.adresse" #adresse="ngModel"></ion-textarea>\n\n  						</ion-item>\n\n						<!--<ion-item no-border no-lines no-margin *ngIf="adresse.hasError(\'required\') && rd.domicile" >\n\n    					<small style="color:red;">>L\'adresse du domicile doit être renseigné.</small>\n\n    					\n\n  						</ion-item>-->\n\n						\n\n						<ion-item *ngIf="rd.domicile">\n\n						<ion-label>Ville</ion-label>\n\n						<ion-input id="ville"required name="ville" [(ngModel)]="rd.ville" #ville="ngModel"></ion-input>\n\n							\n\n						</ion-item>\n\n						<!--<ion-item no-border no-lines no-margin *ngIf="ville.hasError(\'required\') && rd.domicile" >\n\n    					<small style="color:red;">La ville du domicile doit être renseigné.</small>\n\n    					\n\n  						</ion-item>-->\n\n						\n\n						<ion-item *ngIf="rd.domicile">\n\n						<ion-label>Code postal</ion-label>\n\n						<ion-input  id="codePostal" required name="codePostal" [(ngModel)]="rd.codePostal" #codePostal="ngModel" maxlength="5" minlength="5"></ion-input>\n\n							\n\n						</ion-item>\n\n						<!--<ion-item no-border no-lines no-margin *ngIf="codePostal.hasError(\'required\') && rd.domicile" >\n\n    					<small style="color:red;">Le code postal du domicile doit être renseigné.</small>\n\n    					\n\n  						</ion-item>-->\n\n						<ion-item *ngIf="rd.service!=\'Nettoyage\'">\n\n							<ion-label>Description </ion-label>\n\n    					<ion-textarea id="description"  name="description" [(ngModel)]="rd.description" #description="ngModel" ></ion-textarea>\n\n  						</ion-item>\n\n\n\n						\n\n						\n\n						\n\n				\n\n                        \n\n						\n\n					    \n\n					</ion-list>\n\n\n\n					<button  ion-button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Valider</button>\n\n					<h2> {{validation}}</h2>\n\n				</form>\n\n	\n\n</ion-content>\n\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\get-meeting\get-meeting.html"*/,
+            selector: 'page-get-meeting',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\get-meeting\get-meeting.html"*/'<!--\n\nGenerated template for the GetMeetingPage page.\n\n\n\nSee http://ionicframework.com/docs/components/#navigation for more info on\n\nIonic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n	<ion-navbar>\n\n		<ion-title>Prendre un rendez-vous</ion-title>\n\n\n\n\n\n	</ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="bg-style">\n\n\n\n	<!-- probleme avec les has error  -->\n\n\n\n	<h2>{{month}}</h2>\n\n	<ion-buttons>\n\n		<button ion-button [disabled]="isToday" (click)="today()">Aujourd\'hui</button>\n\n		<button ion-button (click)="loadEvents()">Actualiser</button>\n\n\n\n	</ion-buttons>\n\n\n\n\n\n	<div class="bg-calendar">\n\n		<calendar [eventSource]="eventSource"\n\n				  [calendarMode]="calendar.mode"\n\n				  [currentDate]="calendar.currentDate"\n\n				  (onCurrentDateChanged)="onCurrentDateChanged($event)"\n\n				  (onRangeChanged)="reloadSource(startTime, endTime)"\n\n				  (onEventSelected)="onEventSelected($event)"\n\n				  (onTimeSelected)="onTimeSelected($event)"\n\n				  step="30">\n\n		</calendar>\n\n\n\n	</div>\n\n\n\n	<h2>Ajouter un rendez-vous</h2>\n\n	<br>\n\n	<form  (ngSubmit)="onSubmit(loginForm.value)" #loginForm="ngForm">\n\n		<ion-list>\n\n			<ion-item>\n\n				<ion-label>Type de prestation</ion-label>\n\n				<ion-select required id="service" name="service" [(ngModel)]="rd.service" #service="ngModel">\n\n					<ion-option *ngFor="let service of services" [value]="service">\n\n						{{service}}\n\n					</ion-option>\n\n\n\n				</ion-select>\n\n\n\n			</ion-item>\n\n\n\n			<ion-item no-border no-lines no-margin *ngIf="service.hasError(\'required\')" >\n\n				<small style="color:red;">Le type de service doit être renseigné.</small>\n\n\n\n			</ion-item>\n\n\n\n			<ion-item *ngIf="rd.service==\'Nettoyage\'" >\n\n				<ion-label>Type de nettoyage</ion-label>\n\n				<ion-select required id="nettoyage" name="nettoyage" [(ngModel)]="rd.nettoyage" #nettoyage="ngModel">\n\n					<ion-option *ngFor="let nettoyage of nettoyages" [value]="nettoyage">\n\n						{{nettoyage}}\n\n					</ion-option>\n\n				</ion-select>\n\n\n\n\n\n\n\n\n\n			</ion-item>\n\n			<!--<ion-item *ngIf="rd.service==\'Nettoyage\'">\n\n<small *ngIf="nettoyage.hasError(\'required\')" style="color:red;" >Le forfait doit être renseigné.</small>\n\n</ion-item>-->\n\n\n\n\n\n			<ion-item>\n\n				<ion-label>Date et heure</ion-label>\n\n				<ion-datetime id="time" #time="ngModel" required name="time" [(ngModel)]="rd.time"  minuteValues="0,30" displayFormat="DD MMM YYYY-HH:mm" pickerFormat="DD MMM YYYY HH mm" hourValues="9,10,11,12,13,14,15,16,17,18" [min]="minDate"></ion-datetime>\n\n			</ion-item>\n\n			<ion-item no-border no-lines no-margin *ngIf="time.hasError(\'required\')" >\n\n				<small style="color:red;">La date et l\'heure doivent être renseigné.</small>\n\n\n\n			</ion-item>\n\n			<ion-item>\n\n				<ion-label>A domicile</ion-label>\n\n				<ion-checkbox id="domicile" class="example-margin" name="domicile" [(ngModel)]="rd.domicile" #domicile="ngModel"></ion-checkbox>\n\n			</ion-item>\n\n			<ion-item *ngIf="rd.domicile">\n\n				<ion-label floating>Entrer votre adresse</ion-label>\n\n\n\n				<ion-textarea id="adresse" required name="adresse" [(ngModel)]="rd.adresse" #adresse="ngModel"></ion-textarea>\n\n			</ion-item>\n\n			<!--<ion-item no-border no-lines no-margin *ngIf="adresse.hasError(\'required\') && rd.domicile" >\n\n<small style="color:red;">>L\'adresse du domicile doit être renseigné.</small>\n\n\n\n</ion-item>-->\n\n\n\n			<ion-item *ngIf="rd.domicile">\n\n				<ion-label>Ville</ion-label>\n\n				<ion-input id="ville"required name="ville" [(ngModel)]="rd.ville" #ville="ngModel"></ion-input>\n\n\n\n			</ion-item>\n\n			<!--<ion-item no-border no-lines no-margin *ngIf="ville.hasError(\'required\') && rd.domicile" >\n\n<small style="color:red;">La ville du domicile doit être renseigné.</small>\n\n\n\n</ion-item>-->\n\n\n\n			<ion-item *ngIf="rd.domicile">\n\n				<ion-label>Code postal</ion-label>\n\n				<ion-input  id="codePostal" required name="codePostal" [(ngModel)]="rd.codePostal" #codePostal="ngModel" maxlength="5" minlength="5"></ion-input>\n\n\n\n			</ion-item>\n\n			<!--<ion-item no-border no-lines no-margin *ngIf="codePostal.hasError(\'required\') && rd.domicile" >\n\n<small style="color:red;">Le code postal du domicile doit être renseigné.</small>\n\n\n\n</ion-item>-->\n\n			<ion-item *ngIf="rd.service!=\'Nettoyage\'">\n\n				<ion-label>Description </ion-label>\n\n				<ion-textarea id="description"  name="description" [(ngModel)]="rd.description" #description="ngModel" ></ion-textarea>\n\n			</ion-item>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n		</ion-list>\n\n\n\n		<button  ion-button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Valider</button>\n\n		<h2> {{validation}}</h2>\n\n	</form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\get-meeting\get-meeting.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__app_core_compte_service__["a" /* CompteService */]])
     ], GetMeetingPage);
@@ -2098,6 +2148,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+/* Permet la connexion et la deconnexion du compte */
 var ComptePage = /** @class */ (function () {
     function ComptePage(navCtrl, navParams, loginService) {
         this.navCtrl = navCtrl;
@@ -2116,7 +2167,7 @@ var ComptePage = /** @class */ (function () {
     };
     ComptePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-compte',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\compte\compte.html"*/'<!--\n\n  Generated template for the ComptePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar hideBackButton="true">\n\n	  <ion-buttons left>\n\n            <button  (click)="goToHome()" ion-button icon-only >\n\n               <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>\n\n            </button>\n\n        </ion-buttons>\n\n    <ion-title>Compte</ion-title>\n\n  </ion-navbar>\n\n<img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="bg-style no-scroll">\n\n{{id}}\n\n	\n\n	<ion-grid>\n\n  \n\n	<ion-row>\n\n    <ion-col>\n\n		<button class="button" ion-button block large round navPush="GetMeetingPage"> Prendre un rendez-vous</button>\n\n	</ion-col>\n\n  </ion-row>\n\n		\n\n		<ion-row>\n\n    <ion-col>\n\n		<button class="button" ion-button block large round navPush="MeetingPage"> Voir vos rendez-vous</button>\n\n	</ion-col>\n\n  </ion-row>\n\n		<ion-row>\n\n    <ion-col>\n\n		<button class="button" ion-button block large round navPush="CommandesPage"> Voir vos commandes</button>\n\n	</ion-col>\n\n  </ion-row>\n\n		<ion-row>\n\n    <ion-col>\n\n		<button class="button" ion-button block large round> Voir vos devis</button>\n\n	</ion-col>\n\n  </ion-row>\n\n		<br>\n\n	<ion-row>\n\n    <ion-col>\n\n		<button class="button last" (click)="deconnexion()" ion-button block round> Déconnexion</button>\n\n	</ion-col>\n\n  </ion-row>	\n\n	\n\n		\n\n	</ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\compte\compte.html"*/,
+            selector: 'page-compte',template:/*ion-inline-start:"D:\MobileProjectLA2\MobileProject\src\pages\compte\compte.html"*/'<!--\n\nGenerated template for the ComptePage page.\n\n\n\nSee http://ionicframework.com/docs/components/#navigation for more info on\n\nIonic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n	<ion-navbar hideBackButton="true">\n\n		<ion-buttons left>\n\n			<button  (click)="goToHome()" ion-button icon-only >\n\n				<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>\n\n			</button>\n\n		</ion-buttons>\n\n		<ion-title>Compte</ion-title>\n\n	</ion-navbar>\n\n	<img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="bg-style no-scroll">\n\n	{{id}}\n\n\n\n	<ion-grid>\n\n\n\n		<ion-row>\n\n			<ion-col>\n\n				<button class="button" ion-button block large round navPush="GetMeetingPage"> Prendre un rendez-vous</button>\n\n			</ion-col>\n\n		</ion-row>\n\n\n\n		<ion-row>\n\n			<ion-col>\n\n				<button class="button" ion-button block large round navPush="MeetingPage"> Voir vos rendez-vous</button>\n\n			</ion-col>\n\n		</ion-row>\n\n		<ion-row>\n\n			<ion-col>\n\n				<button class="button" ion-button block large round navPush="CommandesPage"> Voir vos commandes</button>\n\n			</ion-col>\n\n		</ion-row>\n\n		<ion-row>\n\n			<ion-col>\n\n				<button class="button" ion-button block large round> Voir vos devis</button>\n\n			</ion-col>\n\n		</ion-row>\n\n		<br>\n\n		<ion-row>\n\n			<ion-col>\n\n				<button class="button last" (click)="deconnexion()" ion-button block round> Déconnexion</button>\n\n			</ion-col>\n\n		</ion-row>	\n\n\n\n\n\n	</ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\MobileProjectLA2\MobileProject\src\pages\compte\compte.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__app_core_login_service__["a" /* LoginService */]])
     ], ComptePage);
@@ -2145,6 +2196,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+/* Service qui permet d'effectuer les requêtes liées à un compte client*/
 var CompteService = /** @class */ (function () {
     function CompteService(http) {
         this.http = http;
@@ -2194,16 +2246,10 @@ var CompteService = /** @class */ (function () {
     CompteService.prototype.deleteOperationReparation = function (idOperation) {
         return this.http.delete('https://projectla2.ovh/API/reparation/byId?id=' + idOperation);
     };
+    CompteService.prototype.deleteCommande = function (id) {
+        return this.http.delete('https://projectla2.ovh/API/commandes/byId?id=' + id);
+    };
     CompteService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
-    ], CompteService);
-    return CompteService;
-}());
-
-//# sourceMappingURL=compte.service.js.map
-
-/***/ })
-
-},[267]);
-//# sourceMappingURL=main.js.map
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
+    ], Compt

@@ -1,54 +1,54 @@
 <!--
-  Generated template for the IdentificationPage page.
+Generated template for the IdentificationPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
+See http://ionicframework.com/docs/components/#navigation for more info on
+Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      PCHealthcare
-    </ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>
+			PCHealthcare
+		</ion-title>
+	</ion-navbar>
 	<img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>
 </ion-header>
 
 <ion-content padding class="bg-style no-scroll">
-	
-	
-		<h2>Connexion</h2>
-	<br>
-				<form  (ngSubmit)="onSubmit2(loginForm2.value)" #loginForm2="ngForm">
-					<ion-list>
-						<ion-item>
-						<ion-label floating>Email</ion-label>
-						<ion-input type="email"  id="email2" name="email2" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="userConnexion.email" #email2="ngModel"></ion-input>
-							
-						</ion-item>
-						<ion-item no-border no-lines no-margin *ngIf="email2.hasError('pattern') && !email2.hasError('required')" >
-    					<small color="red">Veuillez renseigner une adresse valide.</small>
-    					
-  						</ion-item>
-						
-				
-                        <ion-item>
-						<ion-label floating>Mot de passe</ion-label>
-						<ion-input type="password" id="password2" name="password2" required [(ngModel)]="userConnexion.password" #password2="ngModel" ></ion-input>
-						
-						</ion-item>
-						<ion-item>
-						</ion-item>
-					    
-					</ion-list>
 
-					<button  ion-button type="submit" class="btn btn-success" [disabled]="!loginForm2.form.valid">Connexion</button>
-					<p> {{connexion}}</p>
-				</form>
-				<p class="underline" (click)="goToOtherPage()"> Créer un compte </p>
-		
-			
+
+	<h2>Connexion</h2>
+	<br>
+	<form  (ngSubmit)="onSubmit2(loginForm2.value)" #loginForm2="ngForm">
+		<ion-list>
+			<ion-item>
+				<ion-label floating>Email</ion-label>
+				<ion-input type="email"  id="email2" name="email2" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="userConnexion.email" #email2="ngModel"></ion-input>
+
+			</ion-item>
+			<ion-item no-border no-lines no-margin *ngIf="email2.hasError('pattern') && !email2.hasError('required')" >
+				<small color="red">Veuillez renseigner une adresse valide.</small>
+
+			</ion-item>
+
+
+			<ion-item>
+				<ion-label floating>Mot de passe</ion-label>
+				<ion-input type="password" id="password2" name="password2" required [(ngModel)]="userConnexion.password" #password2="ngModel" ></ion-input>
+
+			</ion-item>
+			<ion-item>
+			</ion-item>
+
+		</ion-list>
+
+		<button  ion-button type="submit" class="btn btn-success" [disabled]="!loginForm2.form.valid">Connexion</button>
+		<p> {{connexion}}</p>
+	</form>
+	<p class="underline" (click)="goToOtherPage()"> Créer un compte </p>
+
+
 </ion-content>
 <!--<ion-label color="primary" floating>Floating Label</ion-label>
-    <ion-input></ion-input-->
+<ion-input></ion-input-->
 
 

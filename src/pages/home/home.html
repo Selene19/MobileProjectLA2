@@ -1,38 +1,38 @@
 <ion-header>
-  <ion-navbar hideBackButton="true">
-    <ion-title>
-      PCHealthcare
-    </ion-title>
-  </ion-navbar>
+	<ion-navbar hideBackButton="true">
+		<ion-title>
+			PCHealthcare
+		</ion-title>
+	</ion-navbar>
 	<img src="../../assets/imgs/banniere2.jpg" width="100%" height="auto"/>
 </ion-header>
 
 <ion-content padding class="bg-style no-scroll">
-	
-	
+
+
 	<ion-grid>
-  
-	<ion-row>
-    <ion-col>
-		<h3 text-center> Bienvenue sur PCHealthcare</h3>
-	<p text-center> Découvrez toute nos prestations et prenez un rendez-vous en vous connectant.</p>
-	</ion-col>
-  </ion-row>
-	<ion-row>
-   <br>
-   <br>
-  </ion-row>
-		
+
+		<ion-row>
+			<ion-col>
+				<h3 text-center> Bienvenue sur PCHealthcare</h3>
+				<p text-center> Découvrez toute nos prestations et prenez un rendez-vous en vous connectant.</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<br>
+			<br>
+		</ion-row>
+
 		<button class="button"ion-button block large round navPush="OperationsPage">Découvrir nos services</button>
 		<ion-row>
-    <ion-col>
-		
-		<button class="button" ion-button block large round (click)="goToOtherPage()" [hidden]="this.hiddenConnexion()"> Se connecter</button>
-		<button class="button" ion-button block large round (click)="goToOtherPageCompte()" [hidden]="this.hiddenCompte()"> Voir mon compte </button>
-	</ion-col>
-  </ion-row>
-		
+			<ion-col>
+
+				<button class="button" ion-button block large round (click)="goToOtherPage()" [hidden]="this.hiddenConnexion()"> Se connecter</button>
+				<button class="button" ion-button block large round (click)="goToOtherPageCompte()" [hidden]="this.hiddenCompte()"> Voir mon compte </button>
+			</ion-col>
+		</ion-row>
+
 	</ion-grid>
-	
-  
+
+
 </ion-content>

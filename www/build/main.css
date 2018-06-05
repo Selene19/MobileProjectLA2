@@ -25687,6 +25687,10 @@ page-commandes .bg-style {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+page-commandes .bg-style .bg-calendar {
+  background-color: white;
+}
+
 page-commandes .no-scroll .scroll-content {
   overflow: hidden;
 }
@@ -25695,8 +25699,8 @@ page-commandes h2 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-page-commandes .last {
-  background-color: slategrey;
+ion-app.ios [padding] .scroll-content {
+  padding: 0px;
 }
 
 page-compte .bg-style {

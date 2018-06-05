@@ -11,37 +11,39 @@ import {GetMeetingPage} from '../get-meeting/get-meeting';
  * Ionic pages and navigation.
  */
 
+/*Page d'informations de montage */
+
 @IonicPage()
 @Component({
-  selector: 'page-montages',
-  templateUrl: 'montages.html',
+	selector: 'page-montages',
+	templateUrl: 'montages.html',
 })
 export class MontagesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public loginService: LoginService) {
-  }
+	constructor(public navCtrl: NavController, public navParams: NavParams,public loginService: LoginService) {
+	}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MontagesPage');
-  }
-	
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad MontagesPage');
+	}
+
 	goToOtherPage() {
-    //push another page onto the history stack
-    //causing the nav controller to animate the new page in
-    this.navCtrl.push(IdentificationPage);
-  }
-	
+		//push another page onto the history stack
+		//causing the nav controller to animate the new page in
+		this.navCtrl.push(IdentificationPage);
+	}
+
 	goToOtherPageRD(){
 		this.navCtrl.push(GetMeetingPage);
 	}
-	
+
 	hiddenConnexion(){
 		return this.loginService.hiddenConnexion();
 	}
-	
+
 	hiddenRD(){
 		return this.loginService.hiddenCompte();
-		
+
 	}
 
 }

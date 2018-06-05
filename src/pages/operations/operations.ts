@@ -11,18 +11,20 @@ import {NettoyagesPage} from '../nettoyages/nettoyages';
  * Ionic pages and navigation.
  */
 
+/*Page de choix de service*/
+
 @IonicPage()
 @Component({
-  selector: 'page-operations',
-  templateUrl: 'operations.html',
+	selector: 'page-operations',
+	templateUrl: 'operations.html',
 })
 export class OperationsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+	constructor(public navCtrl: NavController, public navParams: NavParams) {
+	}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad OperationsPage');
-  }
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad OperationsPage');
+	}
 
 }

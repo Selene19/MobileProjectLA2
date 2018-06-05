@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CompteService } from '../../app/core/compte.service';
-import {map,mergeMap} from "rxjs/operators";
+import {map} from "rxjs/operators";
 import { Observable } from "rxjs/Observable";
 import {Commande} from './commande';
-
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the CommandesPage page.
  *
@@ -12,42 +12,90 @@ import {Commande} from './commande';
  * Ionic pages and navigation.
  */
 
+/* Permet d'afficher la liste des commandes et de les supprimer */
+
 @IonicPage()
 @Component({
-  selector: 'page-commandes',
-  templateUrl: 'commandes.html',
+	selector: 'page-commandes',
+	templateUrl: 'commandes.html',
 })
 export class CommandesPage {
-	
+
 	commandes=new Array<Commande>();
+	id:any
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public compteService:CompteService) {
-	  
-	  let key2='id';
-	  
-	   const id=sessionStorage.getItem(key2);
+constructor(public navCtrl: NavController, public navParams: NavParams,public compteService:CompteService,public alertCtrl: AlertController) {
 
-	  this.getCommandes(id).subscribe(commandes=>this.addData(this.commandes));  
-	  
-	  
-  }
+	let key2='id';
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CommandesPage');
-  }
+	const id=sessionStorage.getItem(key2);
 
-	
-	getCommandes(id :any):Observable<any>{
-		
+	this.getCommandes(id).subscribe(commandes=>this.addData(this.commandes));  
+
+
+}
+
+ionViewDidLoad() {
+	console.log('ionViewDidLoad CommandesPage');
+}
+
+
+getCommandes(id :any):Observable<any>{
+
 	return this.compteService.getCommandes(id).pipe(map(commandes => this.commandes=commandes));
-		
-	}
-	addData(commandes:any[]){
-		///console.log(commandes.id);
-		
-		 this.commandes=commandes.reverse();
-	  
-	  
-	  
-	}
+
+}
+addData(commandes:any[]){
+	///console.log(commandes.id);
+
+	this.commandes=commandes.reverse();
+	
+
+
+
+}
+
+openDialog(id:any): void {
+	this.id=id;
+	
+
+	let alert = this.alertCtrl.create({
+		title: 'Suppression',
+		message: 'Voulez-vous supprimer cette commande ?',
+		buttons: [
+			{
+				text: 'Annuler',
+				role: 'cancel',
+				handler: () => {
+					console.log('Annuler');
+
+				}
+			},
+			{
+				text: 'Confirmer',
+				handler: () => {
+					console.log('Confirmer');
+					this.confirm();
+				}
+			}
+		]
+	});
+	alert.present();
+
+
+}
+
+confirm(){
+	this.compteService.deleteCommande(this.id.toString()).subscribe();
+	
+	
+}
+
+
+loadEvents() {
+	let key2='id';
+
+	const id = sessionStorage.getItem(key2);
+	this.getCommandes(id).subscribe(commandes=>this.addData(this.commandes));  
+}
 }

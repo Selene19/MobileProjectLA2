@@ -9,6 +9,8 @@ import { LoginService } from '../../app/core/login.service';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
+/*Page d'accueil*/
 export class HomePage {
 
   constructor(public navCtrl: NavController,public loginService : LoginService) {

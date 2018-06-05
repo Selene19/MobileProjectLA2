@@ -8,60 +8,60 @@ import {UserConnexion} from '../../pages/identification/userConnexion';
 import {RequestOptions,Headers} from '@angular/http';
 
 
-
+/* Service permettant d'effectuer les requetes d'authentification */
 @Injectable()
 export class IdentificationService {
-	
 
- 
-  constructor(private http: HttpClient) { }
-	
+
+
+	constructor(private http: HttpClient) { }
+
 	postUser(user: User):Observable <any> {
-		 
-		 
+
+
 		return this.http.post('https://projectla2.ovh/API/users/new', user);
-		
-		
-		
-		
-		
-  
+
+
+
+
+
+
 	}
 
 	getIdentificationUser(userConnexion : UserConnexion) : Observable<any> {
 		return this.http.get('https://projectla2.ovh/API/users/connexion?email='+userConnexion.email+'&password='+userConnexion.password);
-		
-		
+
+
 	}
-	
+
 	getId(email:any) :Observable<any> {
 		return this.http.get('https://projectla2.ovh/API/users/byEmail?email='+email);
 	}
 
-	
-
-	
-	
-		
-
-	
-		
-	
-	
-
-	
 
 
 
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
 
 
 
-	
-	
+
+
 
 

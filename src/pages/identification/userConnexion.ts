@@ -1,11 +1,11 @@
 export class UserConnexion {
-  id='';
-  email = '';
-  password='';
-  role="user";
-  
- 
+	id='';
+email = '';
+password='';
+role="user";
 
-  constructor() {
-  }
+
+
+constructor() {
+}
 }
