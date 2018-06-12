@@ -25724,6 +25724,31 @@ page-compte .last {
   background-color: slategrey;
 }
 
+page-devis .bg-style {
+  background: #9CECFB;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left bottom, left top, from(#0052D4), color-stop(#65C7F7), to(#9CECFB));
+  background: linear-gradient(0deg, #0052D4, #65C7F7, #9CECFB);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+page-devis .bg-style .bg-calendar {
+  background-color: white;
+}
+
+page-devis .no-scroll .scroll-content {
+  overflow: hidden;
+}
+
+page-devis h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+ion-app.ios [padding] .scroll-content {
+  padding: 0px;
+}
+
 page-get-meeting {
   /*!
  * FullCalendar v3.6.2 Stylesheet

@@ -85,5 +85,14 @@ export class CompteService {
 	deleteCommande(id:any):Observable<any>{
 		return this.http.delete('https://projectla2.ovh/API/commandes/byId?id='+id);
 	}
+	
+	getAllDevis(idUser:any):Observable<any>{
+		return this.http.get('https://projectla2.ovh/API/devis/byIdUser?idUser='+idUser);
+	}
+	
+	getLinkPdf(uuid:any){
+	//return "https://projectla2.ovh/API/pdf/getPdf?uuid="+uuid;
+		window.open("https://projectla2.ovh/API/pdf/getPdf?uuid="+uuid, '_system', 'location=yes');
+}
 
 }

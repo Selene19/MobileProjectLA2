@@ -23,6 +23,15 @@ module.exports = [
     "clobbers": [
       "window.Keyboard"
     ]
+  },
+  {
+    "id": "cordova-plugin-inappbrowser.inappbrowser",
+    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+    "pluginId": "cordova-plugin-inappbrowser",
+    "clobbers": [
+      "cordova.InAppBrowser.open",
+      "window.open"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -32,7 +41,8 @@ module.exports.metadata =
   "cordova-plugin-device": "2.0.2",
   "cordova-plugin-splashscreen": "5.0.2",
   "cordova-plugin-ionic-webview": "1.2.1",
-  "cordova-plugin-ionic-keyboard": "2.1.2"
+  "cordova-plugin-ionic-keyboard": "2.1.2",
+  "cordova-plugin-inappbrowser": "3.0.0"
 };
 // BOTTOM OF METADATA
 });

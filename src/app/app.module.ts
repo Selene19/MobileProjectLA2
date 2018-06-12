@@ -17,6 +17,7 @@ import  {OperationsPage} from '../pages/operations/operations'
 import {MontagesPage} from '../pages/montages/montages';
 import {ReparationsPage} from '../pages/reparations/reparations';
 import {NettoyagesPage} from '../pages/nettoyages/nettoyages';
+import {DevisPage} from '../pages/devis/devis';
 import { CoreModule } from './core/core.module';
 //import { SharedModule } from './shared/shared.module';
 import {IdentificationPageModule} from '../pages/identification/identification.module';
@@ -29,6 +30,7 @@ import {OperationsPageModule} from '../pages/operations/operations.module';
 import {MontagesPageModule} from '../pages/montages/montages.module';
 import {ReparationsPageModule} from '../pages/reparations/reparations.module';
 import {NettoyagesPageModule} from '../pages/nettoyages/nettoyages.module';
+import {DevisPageModule} from '../pages/devis/devis.module';
 
 
 
@@ -52,7 +54,8 @@ import {NettoyagesPageModule} from '../pages/nettoyages/nettoyages.module';
 	  OperationsPageModule,
 	  MontagesPageModule,
 	  ReparationsPageModule,
-	  NettoyagesPageModule
+	  NettoyagesPageModule,
+	  DevisPageModule
 	  
 
   ],
@@ -69,7 +72,8 @@ import {NettoyagesPageModule} from '../pages/nettoyages/nettoyages.module';
 	 OperationsPage,
 	  MontagesPage,
 	  ReparationsPage,
-	  NettoyagesPage
+	  NettoyagesPage,
+	  DevisPage
 	  
   ],
   providers: [
